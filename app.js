@@ -324,6 +324,9 @@ function setLang(lang) {
   currentLang = lang;
   const t = translations[lang];
 
+  // Update HTML lang attribute for SEO
+  document.documentElement.lang = lang;
+
   // Update buttons
   document.querySelectorAll('.lang-switcher button').forEach(btn => {
     btn.classList.toggle('active', btn.id === 'btn-' + lang);
