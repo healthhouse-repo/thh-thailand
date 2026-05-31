@@ -756,6 +756,58 @@ img { max-width: 100%; height: auto; }
   padding-left: 6px;
 }
 
+/* Contact form in footer */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+.footer-form input,
+.footer-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+.footer-form input:focus,
+.footer-form textarea:focus {
+  border-color: var(--red);
+}
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+.footer-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.footer-form button {
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--red);
+  color: var(--white);
+  border: 1px solid var(--red);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.footer-form button:hover {
+  background: #c02d3d;
+}
+
 /* Newsletter in footer */
 .footer-newsletter {
   background: rgba(255,255,255,0.06);
