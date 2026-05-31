@@ -11,8 +11,8 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Poppins', sans-serif; color: var(--text-dark); line-height: 1.6; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Poppins', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; height: auto; }
 
@@ -281,7 +281,7 @@ img { max-width: 100%; height: auto; }
 .page-hero {
   position: relative;
   background: var(--navy);
-  overflow: visible;
+  overflow: hidden;
   padding: 0;
 }
 /* Subtle background pattern overlay */
