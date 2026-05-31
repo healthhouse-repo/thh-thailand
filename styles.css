@@ -194,6 +194,88 @@ img { max-width: 100%; height: auto; }
 }
 .header-nav a:hover::after { width: 100%; }
 
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* Mobile slide menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: var(--navy);
+  z-index: 1000;
+  padding: 80px 30px 30px;
+  transition: right 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.3);
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a {
+  display: block;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  letter-spacing: 0.5px;
+}
+.mobile-menu a:hover { color: var(--red); }
+.mobile-menu .mobile-lang {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 16px;
+}
+.mobile-menu .mobile-lang button {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.mobile-menu .mobile-lang button.active {
+  background: var(--red);
+  border-color: var(--red);
+}
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.mobile-overlay.open { display: block; }
+
 /* ===== HERO SECTION (exact match THH.nl) ===== */
 .page-hero {
   position: relative;
@@ -895,19 +977,36 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 768px) {
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .categories-grid { grid-template-columns: 1fr; }
+  
+  /* Header mobile fixes */
   .header-nav { display: none; }
-  .info-bar { padding: 0 16px; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+  .info-bar { padding: 0 12px; height: auto; min-height: 48px; }
+  .info-bar-inner { flex-wrap: wrap; gap: 8px; padding: 8px 0; }
+  .info-bar-left { font-size: 11px; width: 100%; justify-content: center; text-align: center; }
+  .info-bar-right { width: 100%; justify-content: center; gap: 8px; }
+  .search-box { min-width: 140px; flex: 1; }
+  .search-box input { font-size: 12px; }
+  .lang-switcher { gap: 4px; }
+  .lang-switcher button { padding: 4px 8px; font-size: 11px; }
   .site-header { padding: 10px 16px; }
+  
+  /* Content */
   .section { padding: 40px 16px; }
   .hero-title { width: 85%; left: 16px; }
   .hero-title h1 { font-size: 36px; line-height: 42px; }
   .section-title { font-size: 32px; }
+  
+  /* Footer */
   .footer-main { padding: 40px 20px 30px; }
   .footer-inner { grid-template-columns: 1fr; gap: 30px; }
   .footer-newsletter { margin: 0; }
   .footer-bottom { padding: 16px 20px; }
   .footer-bottom-inner { flex-direction: column; gap: 12px; text-align: center; }
   .footer-legal { flex-wrap: wrap; justify-content: center; }
+  
+  /* About page */
   .about-hero h1 { font-size: 28px; }
   .about-hero-desc { font-size: 14px; }
   .about-promise-grid { grid-template-columns: 1fr; }
@@ -915,8 +1014,20 @@ img { max-width: 100%; height: auto; }
   .timeline-item { flex-direction: column; gap: 8px; }
   .timeline-year { min-width: auto; text-align: left; }
   .about-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  
+  /* Products page */
   .category-filter-inner { flex-wrap: wrap; justify-content: center; }
   .products-banner h1 { font-size: 24px; }
+}
+
+@media (max-width: 480px) {
+  .info-bar-right .search-box { display: none; }
+  .info-bar-right .icon-btn { display: none; }
+  .info-bar-left { font-size: 10px; }
+  .hero-title h1 { font-size: 28px; line-height: 34px; }
+  .hero-title .title-sub { font-size: 12px; }
+  .announcement-bar { font-size: 12px; padding: 8px 10px; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 
 /* ===== ABOUT PAGE HERO ===== */

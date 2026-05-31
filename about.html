@@ -49,8 +49,24 @@
         <a href="index.html#locations" data-i18n="navLocations">VISIT A STORE</a>
         <a href="about.html" data-i18n="navAbout">ABOUT US</a>
       </nav>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+  <div class="mobile-menu">
+    <a href="products.html" data-i18n="navProducts">PRODUCTS</a>
+    <a href="index.html#locations" data-i18n="navLocations">VISIT A STORE</a>
+    <a href="about.html" data-i18n="navAbout">ABOUT US</a>
+    <div class="mobile-lang">
+      <button onclick="setLang('en')" id="mob-btn-en">EN</button>
+      <button onclick="setLang('nl')" id="mob-btn-nl">NL</button>
+      <button onclick="setLang('th')" class="active" id="mob-btn-th">TH</button>
+    </div>
+  </div>
 
   <!-- ===== ABOUT HERO ===== -->
   <section class="about-hero">

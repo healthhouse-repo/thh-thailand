@@ -354,6 +354,30 @@ function setLang(lang) {
   });
 }
 
+// ===== MOBILE MENU =====
+function toggleMobileMenu() {
+  const menu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.mobile-overlay');
+  const hamburger = document.querySelector('.hamburger');
+  if (menu && overlay && hamburger) {
+    menu.classList.toggle('open');
+    overlay.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+}
+
+// Sync mobile lang buttons with desktop
+const origSetLang = setLang;
+setLang = function(lang) {
+  origSetLang(lang);
+  // Sync mobile lang buttons
+  document.querySelectorAll('.mobile-lang button').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.id === 'mob-btn-' + lang) btn.classList.add('active');
+  });
+};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
   setLang('th');
