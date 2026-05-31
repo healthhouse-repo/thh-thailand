@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — The Health House Thailand</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== LAYER 1: ANNOUNCEMENT BAR (RED) ===== -->
+  <div class="announcement-bar">
+    <a href="#locations" data-i18n="annLink1">FIND A STORE</a>
+    <span class="divider">|</span>
+    <a href="products.html" data-i18n="annLink2">VIEW OUR PRODUCTS!</a>
+  </div>
+
+  <!-- ===== LAYER 2: INFO BAR (WHITE) ===== -->
+  <div class="info-bar">
+    <div class="info-bar-inner">
+      <div class="info-bar-left">
+        <span class="icon">📦</span>
+        <span data-i18n="shippingInfo">Free shipping – Order before 18:00, delivered within 2 days</span>
+      </div>
+      <div class="info-bar-right">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" data-i18n-placeholder="searchPlaceholder" placeholder="Search products...">
+        </div>
+        <button class="icon-btn">👤</button>
+        <button class="icon-btn cart-btn">🛒<span class="cart-badge">0</span></button>
+        <div class="lang-switcher">
+          <button onclick="setLang('en')" id="btn-en">EN</button>
+          <button onclick="setLang('nl')" id="btn-nl">NL</button>
+          <button onclick="setLang('th')" class="active" id="btn-th">TH</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LAYER 3: MAIN NAV (NAVY) ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/tth-logo.svg" alt="The Health House">
+      </a>
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="navProducts">PRODUCTS</a>
+        <a href="index.html#locations" data-i18n="navLocations">VISIT A STORE</a>
+        <a href="about.html" data-i18n="navAbout">ABOUT US</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT HERO ===== -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <p class="about-hero-sub" data-i18n="aboutHeroSub">OUR MISSION</p>
+      <h1 data-i18n="aboutHeroTitle">MOTIVATE & SUPPORT YOUR DESIRE TO LIVE WELL</h1>
+      <p class="about-hero-desc" data-i18n="aboutHeroDesc">From a small store in the Netherlands to Southeast Asia — The Health House is dedicated to making premium health products and expert advice accessible to everyone.</p>
+    </div>
+  </section>
+
+  <!-- ===== OUR PROMISE SECTION ===== -->
+  <section class="about-promise section">
+    <div class="section-inner">
+      <div class="about-promise-grid">
+        <div class="about-promise-image">
+          <img src="assets/about-team.webp" alt="The Health House Team">
+        </div>
+        <div class="about-promise-content">
+          <p class="section-subtitle" data-i18n="aboutPromiseSub">Our Promise</p>
+          <h2 class="section-title about-promise-title" data-i18n="aboutPromiseTitle">WHAT MAKES THE HEALTH HOUSE SPECIAL</h2>
+          <p data-i18n="aboutPromiseP1">At The Health House, we believe that everyone deserves access to premium quality supplements, vitamins, and healthy products — combined with expert advice you can truly trust.</p>
+          <p data-i18n="aboutPromiseP2">Unlike other supplement stores, we don't just sell products. Our trained staff takes the time to understand your goals, your lifestyle, and your body — so we can recommend exactly what works for you.</p>
+          <p data-i18n="aboutPromiseP3">That personal touch is what made us the #1 sports nutrition chain in the Netherlands. And now, we're bringing that same experience to Thailand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THREE PILLARS ===== -->
+  <section class="about-pillars section">
+    <div class="section-inner">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🔬</div>
+          <h3 data-i18n="pillarQualityTitle">Quality Products</h3>
+          <p data-i18n="pillarQualityText">We carry only the highest-quality European and international brands. Every product in our store meets strict quality standards — because your health deserves nothing less.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">👤</div>
+          <h3 data-i18n="pillarAdviceTitle">Personal Advice</h3>
+          <p data-i18n="pillarAdviceText">Our expert staff provides tailored recommendations based on your individual goals. Whether you're a beginner or a pro athlete, we'll help you find exactly what you need.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🌍</div>
+          <h3 data-i18n="pillarGlobalTitle">Global Reach</h3>
+          <p data-i18n="pillarGlobalText">From a single store in the Netherlands to Southeast Asia — we're on a mission to make premium health products accessible worldwide. Thailand is our next chapter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUR STORY / TIMELINE ===== -->
+  <section class="about-story section">
+    <div class="section-inner">
+      <p class="section-subtitle" data-i18n="aboutStorySub">Our Story</p>
+      <h2 class="section-title" data-i18n="aboutStoryTitle">FROM A CORNER STORE TO A POWERHOUSE</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-content">
+            <h4 data-i18n="timeline2019Title">The Beginning</h4>
+            <p data-i18n="timeline2019Text">The Health House opens its first store in the Netherlands — a small sports nutrition shop with a big vision: make premium supplements accessible with personal, expert advice.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <h4 data-i18n="timeline2020Title">Rapid Growth</h4>
+            <p data-i18n="timeline2020Text">Despite the pandemic, word spreads fast. Customers love our personal approach. We expand to multiple locations across the Netherlands and launch our online store.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h4 data-i18n="timeline2022Title">Market Leader</h4>
+            <p data-i18n="timeline2022Text">The Health House becomes the Netherlands' #1 sports nutrition chain with 20+ stores, 100+ employees, and partnerships with top European brands.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">
+            <h4 data-i18n="timeline2025Title">International Expansion</h4>
+            <p data-i18n="timeline2025Text">We set our sights on Southeast Asia. Thailand is chosen as our first international market — with Bangkok, Chiang Mai, and Phuket as launch cities.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-content">
+            <h4 data-i18n="timeline2026Title">Thailand Launch</h4>
+            <p data-i18n="timeline2026Text">The Health House Thailand opens its doors. The same quality, the same personal service, the same passion — now in the heart of Southeast Asia. 🇹🇭</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ROW ===== -->
+  <section class="about-stats-section">
+    <div class="about-stats-inner">
+      <div class="stat-card-lg">
+        <div class="stat-number">20+</div>
+        <div class="stat-label" data-i18n="aboutStat1">Stores in the Netherlands</div>
+      </div>
+      <div class="stat-card-lg">
+        <div class="stat-number">100+</div>
+        <div class="stat-label" data-i18n="aboutStat2">Employees</div>
+      </div>
+      <div class="stat-card-lg">
+        <div class="stat-number">50+</div>
+        <div class="stat-label" data-i18n="aboutStat3">Premium Brands</div>
+      </div>
+      <div class="stat-card-lg">
+        <div class="stat-number">#1</div>
+        <div class="stat-label" data-i18n="aboutStat4">Sports Nutrition Chain in NL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEADERSHIP QUOTE ===== -->
+  <section class="about-quote section">
+    <div class="section-inner">
+      <blockquote class="leadership-quote">
+        <p data-i18n="aboutQuoteText">"We started The Health House because we believed everyone deserves access to quality products and honest advice. That mission hasn't changed — it's just gotten bigger. Thailand, we're excited to meet you."</p>
+        <cite data-i18n="aboutQuoteCite">— The Health House Founders</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER / 10% OFF SECTION ===== -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <p class="sub" data-i18n="nlSub">Stay updated</p>
+      <h2 data-i18n="nlTitle">10% OFF YOUR FIRST ORDER</h2>
+      <p data-i18n="nlText">Join The Health House Thailand for exclusive access to our launches, the latest products + nutrition and fitness advice from our experts.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();">
+        <input type="email" data-i18n-placeholder="nlPlaceholder" placeholder="Your e-mail address">
+        <button type="submit" data-i18n="nlBtn">SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (4-column like original) ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3 data-i18n="footerAdviceTitle">Want personal advice?</h3>
+        <p data-i18n="footerAdviceText">Leave your details and we'll get in touch as soon as possible to help you.</p>
+        <p><span data-i18n="footerPhone">You can also reach us at</span> <a href="tel:+6620001234" class="phone-link">+66 2 000 1234</a></p>
+        <form class="footer-form" onsubmit="event.preventDefault();">
+          <input type="text" data-i18n-attr="placeholder" data-i18n-key="footerFormName" placeholder="Name">
+          <input type="email" data-i18n-attr="placeholder" data-i18n-key="footerFormEmail" placeholder="Email address">
+          <input type="tel" data-i18n-attr="placeholder" data-i18n-key="footerFormPhone" placeholder="Phone number">
+          <textarea data-i18n-attr="placeholder" data-i18n-key="footerFormMsg" placeholder="How can we help you?"></textarea>
+          <button type="submit" data-i18n="footerFormSubmit">SEND</button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footerColTitle">The Health House</h3>
+        <ul>
+          <li><a href="products.html" data-i18n="footerShop">Products</a></li>
+          <li><a href="#contact" data-i18n="footerAdvice">Advice</a></li>
+          <li><a href="#" data-i18n="footerBrands">Brands</a></li>
+          <li><a href="about.html" data-i18n="footerAbout">About The Health House</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" id="locations">
+        <h3 data-i18n="footerLocTitle">Our Locations</h3>
+        <ul>
+          <li><a href="#" data-i18n="footerLoc1">Bangkok Sukhumvit</a></li>
+          <li><a href="#" data-i18n="footerLoc2">Bangkok Thonglor</a></li>
+          <li><a href="#" data-i18n="footerLoc3">Chiang Mai</a></li>
+          <li><a href="#" data-i18n="footerLoc4">Phuket</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footerServiceTitle">Customer Service</h3>
+        <ul>
+          <li><a href="#contact" data-i18n="footerContact">Contact</a></li>
+          <li><a href="#" data-i18n="footerJobs">Careers</a></li>
+          <li><a href="#" data-i18n="footerPayment">Payment</a></li>
+          <li><a href="#" data-i18n="footerReturns">Returns</a></li>
+          <li><a href="#" data-i18n="footerCookies">Cookies</a></li>
+          <li><a href="#" data-i18n="footerPrivacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span class="footer-copyright">Copyright 2019-2026. © The Health House Thailand. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="TikTok">♪</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "thh-thailand",
+  "displayName": "The Health House Thailand",
+  "description": "White-label business website for The Health House Thailand — static site with EN/NL/TH language switching",
+  "styles": [
+    "https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.0.8/400.css",
+    "https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.0.8/500.css",
+    "https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.0.8/600.css",
+    "https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.0.8/700.css",
+    "https://cdn.jsdelivr.net/npm/@fontsource/poppins@5.0.8/800.css"
+  ]
+}

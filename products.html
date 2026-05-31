@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — The Health House Thailand</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== LAYER 1: ANNOUNCEMENT BAR (RED) ===== -->
+  <div class="announcement-bar">
+    <a href="#locations" data-i18n="annLink1">FIND A STORE</a>
+    <span class="divider">|</span>
+    <a href="products.html" data-i18n="annLink2">VIEW OUR PRODUCTS!</a>
+  </div>
+
+  <!-- ===== LAYER 2: INFO BAR (WHITE) ===== -->
+  <div class="info-bar">
+    <div class="info-bar-inner">
+      <div class="info-bar-left">
+        <span class="icon">📦</span>
+        <span data-i18n="shippingInfo">Free shipping – Order before 18:00, delivered within 2 days</span>
+      </div>
+      <div class="info-bar-right">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" data-i18n-placeholder="searchPlaceholder" placeholder="Search products..." id="product-search">
+        </div>
+        <button class="icon-btn">👤</button>
+        <button class="icon-btn cart-btn">🛒<span class="cart-badge">0</span></button>
+        <div class="lang-switcher">
+          <button onclick="setLang('en')" id="btn-en">EN</button>
+          <button onclick="setLang('nl')" id="btn-nl">NL</button>
+          <button onclick="setLang('th')" class="active" id="btn-th">TH</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LAYER 3: MAIN NAV (NAVY) ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="assets/tth-logo.svg" alt="The Health House">
+      </a>
+      <nav class="header-nav">
+        <a href="products.html" data-i18n="navProducts">PRODUCTS</a>
+        <a href="index.html#locations" data-i18n="navLocations">VISIT A STORE</a>
+        <a href="about.html" data-i18n="navAbout">ABOUT US</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== COMING SOON BANNER ===== -->
+  <section class="products-banner">
+    <div class="products-banner-inner">
+      <h1 data-i18n="productsBannerTitle">🚀 COMING SOON TO THAILAND</h1>
+      <p data-i18n="productsBannerText">We're bringing the best European sports nutrition & health brands to Thailand. Browse our full catalog below — all products will be available in our Thai stores soon!</p>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS CATALOG ===== -->
+  <section class="section products-section">
+    <div class="section-inner">
+      <div class="products-header">
+        <p class="section-subtitle" data-i18n="productsCatalogSub">Our Catalog</p>
+        <h2 class="section-title" data-i18n="productsCatalogTitle">ALL PRODUCTS</h2>
+        <p class="products-count"><span id="product-count">131</span> <span data-i18n="productsCount">products</span></p>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="category-filter">
+        <div class="category-filter-inner">
+          <button class="filter-btn active" data-filter="all" data-i18n="filterAll">All</button>
+          <button class="filter-btn" data-filter="Protein">Protein</button>
+          <button class="filter-btn" data-filter="Creatine">Creatine</button>
+          <button class="filter-btn" data-filter="Pre-Workout">Pre-Workout</button>
+          <button class="filter-btn" data-filter="Vitamins &amp; Health">Vitamins &amp; Health</button>
+          <button class="filter-btn" data-filter="Recovery">Recovery</button>
+          <button class="filter-btn" data-filter="Muscle Building">Muscle Building</button>
+          <button class="filter-btn" data-filter="Amino Acids">Amino Acids</button>
+          <button class="filter-btn" data-filter="Weight Loss">Weight Loss</button>
+          <button class="filter-btn" data-filter="Food &amp; Snacks">Food &amp; Snacks</button>
+          <button class="filter-btn" data-filter="Accessories">Accessories</button>
+          <button class="filter-btn" data-filter="Health">Health</button>
+          <button class="filter-btn" data-filter="Lifestyle">Lifestyle</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="product-grid">
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/494755CF-9C1D-4F78-BA54-D870232815D3.webp" alt="Kosso Nutrition G.O.A.T. Ultimate Pre-Workout 530 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition G.O.A.T. Ultimate Pre-Workout 530 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/Samurai_Render.webp" alt="Kosso Nutrition Samurai Extreme 2.0 Pre-Workout 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition Samurai Extreme 2.0 Pre-Workout 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/Anaconda_Render.webp" alt="Kosso Nutrition Anaconda Extreme Pre-Workout Tropical Rage 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition Anaconda Extreme Pre-Workout Tropical Rage 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/Apocalyps_Render.webp" alt="Kosso Nutrition Apocalypse Extreme Pre-Workout Cherry Bomb 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition Apocalypse Extreme Pre-Workout Cherry Bomb 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/Madlabs_ProductShot_1e331d41-d7e2-4abe-930b-7ed29350e8c6.webp" alt="Kosso Nutrition Madlabs Extreme Pre-Workout Poisonous Apple 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition Madlabs Extreme Pre-Workout Poisonous Apple 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/PoppinCola_PWO_LEMON_Render.webp" alt="Kosso Nutrition Beast Mode Extreme Pre-Workout Cola 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition Beast Mode Extreme Pre-Workout Cola 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/Kossoine_PWO_LEMON_Render.webp" alt="Kosso Nutrition Kossoine Extreme Pre-Workout Killer Lemon 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition Kossoine Extreme Pre-Workout Killer Lemon 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/04/Tsunami_ProductShot_79edbf06-855c-4ff5-a333-950b17408229.webp" alt="Kosso Nutrition Tsunami Extreme Pre-Workout Blue Watermelon 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition Tsunami Extreme Pre-Workout Blue Watermelon 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/hf_20260312_172258_9f71e9ff-3a30-4cf4-a57e-b6765eaf20f4-scaled.jpeg" alt="The Health House Hardcore Prime Boost Natural Muscle Builder 120 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Hardcore Prime Boost Natural Muscle Builder 120 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/hf_20260312_172020_8911f0e3-db17-4d16-94aa-3c8aeb6ae41c-scaled.jpeg" alt="The Health House Hardcore Libido Boost 90 tablets" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Hardcore Libido Boost 90 tablets</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Vitamins &amp; Health,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/hf_20260312_172244_058b176f-cc64-4b02-b6f1-88452f2f5cdf-scaled.jpeg" alt="The Health House Hardcore Ashwagandha Boost 100 tablets" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Hardcore Ashwagandha Boost 100 tablets</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Muscle Building,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/creatine-1.jpg" alt="Sphinx Nutrition Creatine Monohydrate 300 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Sphinx</div>
+        <div class="name">Sphinx Nutrition Creatine Monohydrate 300 g</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/preworkout.jpg" alt="Sphinx Nutrition Raw Pre-Workout 300 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Sphinx</div>
+        <div class="name">Sphinx Nutrition Raw Pre-Workout 300 g</div>
+      </div>
+      <div class="product-card" data-categories="Weight Loss">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/clenburx-90c-n_1.webp" alt="TREC Clenburexin Fat Burner 90 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Clenburexin Fat Burner 90 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/testoxx-3-60c_1.webp" alt="TREC Testoxx Testosterone Booster" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Testoxx Testosterone Booster</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/tr-black-2-120c-n1_1.webp" alt="TREC Tribulon Black Testosterone Booster" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Tribulon Black Testosterone Booster</div>
+      </div>
+      <div class="product-card" data-categories="Weight Loss">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/th-fat-bur-2-120k_1.webp" alt="TREC Thermo Fat Burner Max" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Thermo Fat Burner Max</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Vitamins &amp; Health,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/prozma-3-90c_1.webp" alt="TREC ProZMA+ 90 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC ProZMA+ 90 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/Untitled-design-12.png" alt="Vitisfera Resveratrol Caps" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Vitisfera</div>
+        <div class="name">Vitisfera Resveratrol Caps</div>
+      </div>
+      <div class="product-card" data-categories="Lifestyle,Vitamins &amp; Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/vitisfera-fibrelin-30-sase.webp" alt="Vitisfera Fiberlin" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Vitisfera</div>
+        <div class="name">Vitisfera Fiberlin</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout,Muscle Building,Recovery,Protein,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-13-at-12.49.05-3.jpeg" alt="Ramadan Pakket: Performance" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Ramadan</div>
+        <div class="name">Ramadan Pakket: Performance</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Muscle Building,Recovery,Protein,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-13-at-12.49.05-2.jpeg" alt="Ramadan Pakket: Kracht &amp; Herstel" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Ramadan</div>
+        <div class="name">Ramadan Pakket: Kracht &amp; Herstel</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Vitamins &amp; Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-13-at-12.49.05.jpeg" alt="Ramadan Pakket: Herstel &amp; Balans" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Ramadan</div>
+        <div class="name">Ramadan Pakket: Herstel &amp; Balans</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Vitamins &amp; Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-13-at-12.49.05-1.jpeg" alt="Ramadan Pakket: Vitaliteit &amp; Spier Herstel" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Ramadan</div>
+        <div class="name">Ramadan Pakket: Vitaliteit &amp; Spier Herstel</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/wmremove-transformed-1-1.png" alt="The Health House Creatine Monohydrate 100% 500 g Gratis" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Creatine Monohydrate 100% 500 g Gratis</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Muscle Building,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/inlead-creatine-monohydrate-500g.png" alt="Inlead Creatine Monohydrate 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Inlead</div>
+        <div class="name">Inlead Creatine Monohydrate 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Health,Muscle Building,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/zma_multi_test-scaled-1.jpg" alt="Ramadan pakket: Energie &amp; Slaap" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Ramadan</div>
+        <div class="name">Ramadan pakket: Energie &amp; Slaap</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/superrrrrrrrrrrrrrrrrrrrrrrrrrrrr-1.png" alt="The Health House Super Human Pre-Workout Strawberry Lemon 300 g In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Super Human Pre-Workout Strawberry Lemon 300 g In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-magnesium-citraat.webp" alt="MyBodyFuel Magnesium Citraat 60 Tabletten In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Magnesium Citraat 60 Tabletten In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-calcium-zinc-magnesium.webp" alt="MyBodyFuel Calcium, Zink &amp; Magnesium 60 Tabletten In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Calcium, Zink &amp; Magnesium 60 Tabletten In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-creatine-monohydrate.webp" alt="MyBodyFuel Creatine Monohydrate 300 g In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Creatine Monohydrate 300 g In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-omega-3.webp" alt="MyBodyFuel Omega 3 Softgels 1000 mg In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Omega 3 Softgels 1000 mg In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-multivitamin.webp" alt="MyBodyFuel Multivitamin tablets In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Multivitamin tablets In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-37-1.png" alt="Tyranos Flex voor soepele gewrichten 90 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Flex voor soepele gewrichten 90 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-35-1.png" alt="Tyranos Active Plus 90 capsules In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Active Plus 90 capsules In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-33-1.png" alt="Tyranos Active 90 capsules In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Active 90 capsules In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/10/Ontwerp-zonder-titel-77.png" alt="Huge Multi Vitamine In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Huge</div>
+        <div class="name">Huge Multi Vitamine In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Muscle Building,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/esn0024.webp" alt="ESN ULTRAPURE CREATINE - 90 CAPSULES" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">ESN</div>
+        <div class="name">ESN ULTRAPURE CREATINE - 90 CAPSULES</div>
+      </div>
+      <div class="product-card" data-categories="Food &amp; Snacks">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/Natural20Bar.png" alt="XXL Nutrition Natural Energy Bar" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">XXL</div>
+        <div class="name">XXL Nutrition Natural Energy Bar</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-multivitamin.webp" alt="MyBodyFuel Multivitamine - 90 Tabletten" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Multivitamine - 90 Tabletten</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Lifestyle,Vitamins &amp; Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-omega-3.webp" alt="MyBodyFuel Omega 3 Softgels - 1000 mg" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Omega 3 Softgels - 1000 mg</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Muscle Building,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-creatine-monohydrate.webp" alt="MyBodyFuel Creatine Monohydraat" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Creatine Monohydraat</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-calcium-zinc-magnesium.webp" alt="MyBodyFuel Calcium, Zink &amp; Magnesium - 60 Tabletten" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Calcium, Zink &amp; Magnesium - 60 Tabletten</div>
+      </div>
+      <div class="product-card" data-categories="Lifestyle,Vitamins &amp; Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-vitamin-d3.webp" alt="MyBodyFuel Vitamine D3 - 25 µg - 60 Tabletten" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Vitamine D3 - 25 µg - 60 Tabletten</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Vitamins &amp; Health,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-magnesium-citraat.webp" alt="MyBodyFuel Magnesium Citraat 200 mg - 60 Tabletten" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Magnesium Citraat 200 mg - 60 Tabletten</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1.png" alt="The Health House Super Human Pre-Workout + Creatine Monohydrate Pakket" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Super Human Pre-Workout + Creatine Monohydrate Pakket</div>
+      </div>
+      <div class="product-card" data-categories="Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/PAPAPA0A0A0A.png" alt="Ré Boost - Silicum Hairboost" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Ré</div>
+        <div class="name">Ré Boost - Silicum Hairboost</div>
+      </div>
+      <div class="product-card" data-categories="Lifestyle,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/P0A0A00A0A0A0A0A0-1.png" alt="Vitisfera Biotin 5000 µg - 60 tabletten" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Vitisfera</div>
+        <div class="name">Vitisfera Biotin 5000 µg - 60 tabletten</div>
+      </div>
+      <div class="product-card" data-categories="Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/shooottototoototot.png" alt="Vitisfera Resveratrol Shots" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Vitisfera</div>
+        <div class="name">Vitisfera Resveratrol Shots</div>
+      </div>
+      <div class="product-card" data-categories="Lifestyle,Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/bromag.png" alt="Vitisfera Bromag" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Vitisfera</div>
+        <div class="name">Vitisfera Bromag</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Vitamins &amp; Health,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/wmremove-transformed.png" alt="The Health House ZMA Pro Zink Magnesium Vitamine B6 60 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House ZMA Pro Zink Magnesium Vitamine B6 60 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Weight Loss">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/2499_huge-supplements-eliminate.webp" alt="HUGE Eliminate - 120 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">HUGE</div>
+        <div class="name">HUGE Eliminate - 120 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/Handschoen-4.jpg" alt="Enfusion Gloves" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Enfusion</div>
+        <div class="name">Enfusion Gloves</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/Gloves-Red.jpg" alt="Mini Gloves Red" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Mini</div>
+        <div class="name">Mini Gloves Red</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/Blue-Gloves.jpg" alt="Mini Gloves Blue" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Mini</div>
+        <div class="name">Mini Gloves Blue</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/Cap-Blue-Front.jpg" alt="Enfusion Cap – Navy" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Enfusion</div>
+        <div class="name">Enfusion Cap – Navy</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/Cap-Red-Front.jpg" alt="Enfusion Cap – Bordeaux" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Enfusion</div>
+        <div class="name">Enfusion Cap – Bordeaux</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/Cap-Black-Front.jpg" alt="Enfusion Cap – Black" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Enfusion</div>
+        <div class="name">Enfusion Cap – Black</div>
+      </div>
+      <div class="product-card" data-categories="Lifestyle,Vitamins &amp; Health,Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/wmremove-transformed-2.png" alt="The Health House Omega 3 1000 mg" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Omega 3 1000 mg</div>
+      </div>
+      <div class="product-card" data-categories="Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/wmremove-transformed-1-1.png" alt="The Health House 100% Creatine Monohydrate 500 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House 100% Creatine Monohydrate 500 g</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/wmremove-transformed-3.png" alt="The Health House Multivitamine Complex 90 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Multivitamine Complex 90 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/superrrrrrrrrrrrrrrrrrrrrrrrrrrrr-1.png" alt="The Health House Super Human Pre-Workout Strawberry Lemon 300 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Super Human Pre-Workout Strawberry Lemon 300 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/aaaaaaaaaaaaaaaaaaaaaa.png" alt="Nutrend Creaport Creatine 600 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Nutrend</div>
+        <div class="name">Nutrend Creaport Creatine 600 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/vanilaaaaaaaaaaaaa.png" alt="Scitec Nutrition 100% Whey Protein Professional" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Scitec</div>
+        <div class="name">Scitec Nutrition 100% Whey Protein Professional</div>
+      </div>
+      <div class="product-card" data-categories="Health,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/creaaaaa-1.png" alt="Human Protect Creatine Monohydrate 500g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Human</div>
+        <div class="name">Human Protect Creatine Monohydrate 500g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/nxttttttttt.png" alt="NXT Beef Protein Isolate 1.8 kg" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">NXT</div>
+        <div class="name">NXT Beef Protein Isolate 1.8 kg</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/ABEEEEEEEEE.png" alt="Applied Nutrition ABE Ultimate Pre-workout" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Applied</div>
+        <div class="name">Applied Nutrition ABE Ultimate Pre-workout</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/bannanaa.png" alt="Applied Nutrition Critical Whey Protein 2 kg" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Applied</div>
+        <div class="name">Applied Nutrition Critical Whey Protein 2 kg</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/totalll-warr.png" alt="Redcon1 Total War Pre-Workout" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Redcon1</div>
+        <div class="name">Redcon1 Total War Pre-Workout</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/Untitled.png" alt="C4 Ultimate Pre-Workout" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">C4</div>
+        <div class="name">C4 Ultimate Pre-Workout</div>
+      </div>
+      <div class="product-card" data-categories="Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/sciteccc.jpg" alt="Scitec Nutrition Multi Pro Plus" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Scitec</div>
+        <div class="name">Scitec Nutrition Multi Pro Plus</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/12/JAJJAJAJAJAA.png" alt="Supply Ultra Frost Pre-Workout" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Supply</div>
+        <div class="name">Supply Ultra Frost Pre-Workout</div>
+      </div>
+      <div class="product-card" data-categories="Accessories,Vitamins &amp; Health,Recovery,Lifestyle,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/11/Ontwerp-zonder-titel-2025-11-18T143529.093.png" alt="Alina Rood Licht Gloeilamp" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Alina</div>
+        <div class="name">Alina Rood Licht Gloeilamp</div>
+      </div>
+      <div class="product-card" data-categories="Accessories,Vitamins &amp; Health,Recovery,Lifestyle,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/11/Ontwerp-zonder-titel-2025-11-18T141437.639.png" alt="Alina Neusstrips" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Alina</div>
+        <div class="name">Alina Neusstrips</div>
+      </div>
+      <div class="product-card" data-categories="Accessories,Vitamins &amp; Health,Recovery,Lifestyle,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/11/Ontwerp-zonder-titel-2025-11-18T140522.996.png" alt="Alina Mondtape" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Alina</div>
+        <div class="name">Alina Mondtape</div>
+      </div>
+      <div class="product-card" data-categories="Accessories,Vitamins &amp; Health,Recovery,Lifestyle,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/11/Ontwerp-zonder-titel-2025-11-18T135902.973.png" alt="Rood lichtlamp met Sensor" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Rood</div>
+        <div class="name">Rood lichtlamp met Sensor</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Lifestyle,Vitamins &amp; Health,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/11/Ontwerp-zonder-titel-93.png" alt="Rood Licht Leeslamp" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Rood</div>
+        <div class="name">Rood Licht Leeslamp</div>
+      </div>
+      <div class="product-card" data-categories="Health,Vitamins">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/10/Ontwerp-zonder-titel-77.png" alt="HUGE Multi Vitamin - 120 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">HUGE</div>
+        <div class="name">HUGE Multi Vitamin - 120 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/10/Ontwerp-zonder-titel-75.png" alt="HUGE Creatine Monohydraat" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">HUGE</div>
+        <div class="name">HUGE Creatine Monohydraat</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/10/Ontwerp-zonder-titel-69.png" alt="HUGE Liquid Glycerol Pre-Workout Pump" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">HUGE</div>
+        <div class="name">HUGE Liquid Glycerol Pre-Workout Pump</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Vitamins &amp; Health,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-41.png" alt="Tyranos Collageen" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Collageen</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Vitamins &amp; Health,Health,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-39.png" alt="Tyranos Protect | Support Spierfunctie" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Protect | Support Spierfunctie</div>
+      </div>
+      <div class="product-card" data-categories="Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-37-1.png" alt="Tyranos Flex | Soepele gewrichten | Sporters" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Flex | Soepele gewrichten | Sporters</div>
+      </div>
+      <div class="product-card" data-categories="Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-35-1.png" alt="Tyranos Active Plus | Kraakbeen en Gewrichten" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Active Plus | Kraakbeen en Gewrichten</div>
+      </div>
+      <div class="product-card" data-categories="Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-33-1.png" alt="Tyranos Active | Kraakbeen en Gewrichten" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Tyranos</div>
+        <div class="name">Tyranos Active | Kraakbeen en Gewrichten</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Food &amp; Snacks,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/09/Ontwerp-zonder-titel-32-1.png" alt="nutri+ Rice Pudding" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">nutri+</div>
+        <div class="name">nutri+ Rice Pudding</div>
+      </div>
+      <div class="product-card" data-categories="Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2024/06/wmremove-transformed-4-1.png" alt="The Health House Creatine Monohydrate 100%" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Creatine Monohydrate 100%</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2023/03/RICODED-3D-Fit-Focus-Boost-120-vcaps-2022-e1670671611120.webp" alt="Ricoded Fit &amp; Focus Boost 120 capsules" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Ricoded</div>
+        <div class="name">Ricoded Fit &amp; Focus Boost 120 capsules</div>
+      </div>
+      <div class="product-card" data-categories="Amino Acids">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2022/12/10xGlutPlus_800x800.webp" alt="10X GLUT 300GR UNFLAVOURED" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">10X</div>
+        <div class="name">10X GLUT 300GR UNFLAVOURED</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2022/12/shaker-xxl-nutrition-roze.png" alt="XXL Nutrition Shaker Roze" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">XXL</div>
+        <div class="name">XXL Nutrition Shaker Roze</div>
+      </div>
+      <div class="product-card" data-categories="Accessories">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2022/12/Shaker-800ml.webp" alt="XXL Nutrition Shaker Zwart 700 ml" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">XXL</div>
+        <div class="name">XXL Nutrition Shaker Zwart 700 ml</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Weight Loss">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-21-at-15.31.36.jpeg" alt="THE HEALTH HOUSE ALL IN ONE" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">THE</div>
+        <div class="name">THE HEALTH HOUSE ALL IN ONE</div>
+      </div>
+      <div class="product-card" data-categories="Recovery">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-21-at-15.31.36-4.jpeg" alt="THE HEALTH HOUSE INTRA+ PRO" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">THE</div>
+        <div class="name">THE HEALTH HOUSE INTRA+ PRO</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/forge-deploy-14-1770896225206.png" alt="Obsidian Performance Sentinel Pre-Workout Sour Raspberry" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Obsidian</div>
+        <div class="name">Obsidian Performance Sentinel Pre-Workout Sour Raspberry</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Amino Acids">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/dope0003.webp" alt="Dope! EAA Zero Amino Acids 300 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Dope!</div>
+        <div class="name">Dope! EAA Zero Amino Acids 300 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/esn0017.webp" alt="ESN Vegan Designer Protein 2.0 420 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">ESN</div>
+        <div class="name">ESN Vegan Designer Protein 2.0 420 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/46200637_digital-image.avif" alt="ESN Vegan Designer Protein 280 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">ESN</div>
+        <div class="name">ESN Vegan Designer Protein 280 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Amino Acids">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/Aminos_280g_TropicalPunchFlavor_900x1200_shopbild-7AJRPK7C_db38cc79-28aa-4335-8098-953b62ef1b91.webp" alt="ESN Aminos 280 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">ESN</div>
+        <div class="name">ESN Aminos 280 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/optimum-nutrition-100-whey-2270gr-french-vanilla.webp" alt="Optimum Nutrition Gold Standard 100% Whey Protein" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Optimum</div>
+        <div class="name">Optimum Nutrition Gold Standard 100% Whey Protein</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/reeses-whey-66srv.webp" alt="Cellucor C4 Whey Protein Powder" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Cellucor</div>
+        <div class="name">Cellucor C4 Whey Protein Powder</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Muscle Building,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/03/per4m-micronised-creatine-monohydrate-150g.webp" alt="Per4m Micronized Creatine Monohydrate" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Per4m</div>
+        <div class="name">Per4m Micronized Creatine Monohydrate</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/per4m-cherry-fizz-pre-workout.webp" alt="Per4m Pre-Workout 570 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Per4m</div>
+        <div class="name">Per4m Pre-Workout 570 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/per4m-vanilla-creme-isolate-protein-powder-2kg.webp" alt="Per4m Isolate Zero Whey Protein 2 kg" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Per4m</div>
+        <div class="name">Per4m Isolate Zero Whey Protein 2 kg</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/per4m-vanilla-creme-whey-protein-powder-2kg.webp" alt="Per4m Whey Protein 2 kg" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Per4m</div>
+        <div class="name">Per4m Whey Protein 2 kg</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/trec-nutrition-isowhay-hydro-2000g.png" alt="TREC IsoWhey Hydro Whey Protein Isolate" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC IsoWhey Hydro Whey Protein Isolate</div>
+      </div>
+      <div class="product-card" data-categories="Protein">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/whey.jpg" alt="Sphinx Nutrition Raw Whey Protein 806 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Sphinx</div>
+        <div class="name">Sphinx Nutrition Raw Whey Protein 806 g</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/boogieman-300g-jar_1.webp" alt="TREC Boogieman Pre-Workout 300 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Boogieman Pre-Workout 300 g</div>
+      </div>
+      <div class="product-card" data-categories="Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/mass-xxl-3000g_1.webp" alt="TREC Mass XXL Weight Gainer" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Mass XXL Weight Gainer</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/s.a.w.-400g-jar_1.webp" alt="TREC S.A.W. Pre-Workout" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC S.A.W. Pre-Workout</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/700.webp" alt="TREC Isolate 100 Whey Protein Isolate" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Isolate 100 Whey Protein Isolate</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/trec-zestaw-shotow-boogieman-grejfrut-limonka-12-s-boogieman-shot-12-szt-kr.webp" alt="TREC Boogieman Pre-Workout Shot" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Boogieman Pre-Workout Shot</div>
+      </div>
+      <div class="product-card" data-categories="Food &amp; Snacks">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/boogieman-zestaw-batonow-proteinowych-o-smaku-czek-protein-boogie-bar-choco_q59b4Jh.webp" alt="TREC Protein Boogie Bar" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Protein Boogie Bar</div>
+      </div>
+      <div class="product-card" data-categories="Vitamins &amp; Health,Health">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/collagen-renover-350g-jar_1.webp" alt="TREC Collagen Renover" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Collagen Renover</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/casein-100-1800g-jar_1.webp" alt="TREC Casein 100" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Casein 100</div>
+      </div>
+      <div class="product-card" data-categories="Weight Loss">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/3000.webp" alt="TREC L-Carnitine 3000" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC L-Carnitine 3000</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Amino Acids">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/bcaa.webp" alt="TREC Gold Core BCAA 250 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Gold Core BCAA 250 g</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Amino Acids">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/bcaa-high-speed-250g-jar.webp" alt="TREC BCAA High Speed" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC BCAA High Speed</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/whey-100-700g_1.webp" alt="TREC Whey 100 Protein Powder" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Whey 100 Protein Powder</div>
+      </div>
+      <div class="product-card" data-categories="Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/s-l1600.webp" alt="TREC Boogie Oat Gainer 2 kg" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Boogie Oat Gainer 2 kg</div>
+      </div>
+      <div class="product-card" data-categories="Protein,Muscle Building">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/solid-mass-3000g_1.webp" alt="TREC Solid Mass Weight Gainer" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">TREC</div>
+        <div class="name">TREC Solid Mass Weight Gainer</div>
+      </div>
+      <div class="product-card" data-categories="Recovery,Amino Acids,Creatine">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/02/creatine_anabolic_cherry_900gram.jpg" alt="USN Creatine Anabolic 900 g" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">USN</div>
+        <div class="name">USN Creatine Anabolic 900 g</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/insane-edge-front.png" alt="The Health House Insane Edge High Stim Pre-Workout In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">The</div>
+        <div class="name">The Health House Insane Edge High Stim Pre-Workout In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-procrea-aardbei.webp" alt="MyBodyFuel Whey Protein &amp; Creatine 1 kg In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Whey Protein &amp; Creatine 1 kg In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-vitamin-mix-tropical.webp" alt="MyBodyFuel Vitamine Mix 300 g In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Vitamine Mix 300 g In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-electrolytes-blueberry.webp" alt="MyBodyFuel Elektrolyten 300 g In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Elektrolyten 300 g In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-protein-oats-banaan.webp" alt="MyBodyFuel Protein Oats 1050 g In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Protein Oats 1050 g In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/mybodyfuel-protein-pancakes-naturel.webp" alt="MyBodyFuel Protein Pancakes 1 kg In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">MyBodyFuel</div>
+        <div class="name">MyBodyFuel Protein Pancakes 1 kg In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Pre-Workout">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/Crank_380g_BlackberryFlavor_2024x2024_shop-Ky6j3hay_e04a4802-9642-4856-ad9b-69379cd8f308.webp" alt="ESN Crank Pre-Workout" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">ESN</div>
+        <div class="name">ESN Crank Pre-Workout</div>
+      </div>
+      <div class="product-card" data-categories="Muscle Building,Amino Acids">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2026/01/esn0013.webp" alt="ESN EAA Formula Amino Acids" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">ESN</div>
+        <div class="name">ESN EAA Formula Amino Acids</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/10/Ontwerp-zonder-titel-72.png" alt="Huge Hibernate Sleep Formula In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Huge</div>
+        <div class="name">Huge Hibernate Sleep Formula In Store Deals</div>
+      </div>
+      <div class="product-card" data-categories="Other">
+        <span class="badge coming-soon" data-i18n="comingSoon">Coming Soon</span>
+        <img src="https://thehealthhouse.nl/wp-content/uploads/2025/10/Ontwerp-zonder-titel-79.png" alt="Kosso Nutrition CREAWHEY In Store Deals" class="product-card-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23f0f0f0'/%3E%3Ctext x='150' y='150' text-anchor='middle' dy='.3em' fill='%23999' font-family='sans-serif' font-size='14'%3EImage Coming Soon%3C/text%3E%3C/svg%3E'">
+        <div class="brand">Kosso</div>
+        <div class="name">Kosso Nutrition CREAWHEY In Store Deals</div>
+      </div>
+      </div>
+
+      <p class="products-coming-note" data-i18n="productsNote">All products shown are from our Netherlands catalog and will be available in Thailand stores soon. Prices may vary.</p>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER / 10% OFF SECTION ===== -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <p class="sub" data-i18n="nlSub">Stay updated</p>
+      <h2 data-i18n="nlTitle">10% OFF YOUR FIRST ORDER</h2>
+      <p data-i18n="nlText">Join The Health House Thailand for exclusive access to our launches, the latest products + nutrition and fitness advice from our experts.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();">
+        <input type="email" data-i18n-placeholder="nlPlaceholder" placeholder="Your e-mail address">
+        <button type="submit" data-i18n="nlBtn">SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (4-column like original) ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3 data-i18n="footerAdviceTitle">Want personal advice?</h3>
+        <p data-i18n="footerAdviceText">Leave your details and we\'ll get in touch as soon as possible to help you.</p>
+        <p><span data-i18n="footerPhone">You can also reach us at</span> <a href="tel:+6620001234" class="phone-link">+66 2 000 1234</a></p>
+        <form class="footer-form" onsubmit="event.preventDefault();">
+          <input type="text" data-i18n-attr="placeholder" data-i18n-key="footerFormName" placeholder="Name">
+          <input type="email" data-i18n-attr="placeholder" data-i18n-key="footerFormEmail" placeholder="Email address">
+          <input type="tel" data-i18n-attr="placeholder" data-i18n-key="footerFormPhone" placeholder="Phone number">
+          <textarea data-i18n-attr="placeholder" data-i18n-key="footerFormMsg" placeholder="How can we help you?"></textarea>
+          <button type="submit" data-i18n="footerFormSubmit">SEND</button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footerColTitle">The Health House</h3>
+        <ul>
+          <li><a href="products.html" data-i18n="footerShop">Products</a></li>
+          <li><a href="#contact" data-i18n="footerAdvice">Advice</a></li>
+          <li><a href="#" data-i18n="footerBrands">Brands</a></li>
+          <li><a href="about.html" data-i18n="footerAbout">About The Health House</a></li>
+        </ul>
+      </div>
+      <div class="footer-col" id="locations">
+        <h3 data-i18n="footerLocTitle">Our Locations</h3>
+        <ul>
+          <li><a href="#" data-i18n="footerLoc1">Bangkok Sukhumvit</a></li>
+          <li><a href="#" data-i18n="footerLoc2">Bangkok Thonglor</a></li>
+          <li><a href="#" data-i18n="footerLoc3">Chiang Mai</a></li>
+          <li><a href="#" data-i18n="footerLoc4">Phuket</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="footerServiceTitle">Customer Service</h3>
+        <ul>
+          <li><a href="#contact" data-i18n="footerContact">Contact</a></li>
+          <li><a href="#" data-i18n="footerJobs">Careers</a></li>
+          <li><a href="#" data-i18n="footerPayment">Payment</a></li>
+          <li><a href="#" data-i18n="footerReturns">Returns</a></li>
+          <li><a href="#" data-i18n="footerCookies">Cookies</a></li>
+          <li><a href="#" data-i18n="footerPrivacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span class="footer-copyright">Copyright 2019-2026. © The Health House Thailand. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="TikTok">♪</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Product filtering
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        const cards = document.querySelectorAll('.product-card');
+        let count = 0;
+        cards.forEach(card => {
+          const cats = card.getAttribute('data-categories');
+          if (filter === 'all' || cats.includes(filter)) {
+            card.style.display = '';
+            count++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        document.getElementById('product-count').textContent = count;
+      });
+    });
+
+    // Product search
+    const searchInput = document.getElementById('product-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const cards = document.querySelectorAll('.product-card');
+        let count = 0;
+        cards.forEach(card => {
+          const name = card.querySelector('.name').textContent.toLowerCase();
+          const brand = card.querySelector('.brand').textContent.toLowerCase();
+          if (name.includes(query) || brand.includes(query)) {
+            card.style.display = '';
+            count++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        document.getElementById('product-count').textContent = count;
+        // Reset filter buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        if (!query) document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+      });
+    }
+  </script>
+</body>
+</html>
