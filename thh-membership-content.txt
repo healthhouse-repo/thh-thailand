@@ -1,0 +1,163 @@
+<!-- wp:html -->
+<style>
+.thh-mem * { box-sizing: border-box; margin: 0; padding: 0; }
+.thh-mem { font-family: 'Montserrat', 'Segoe UI', sans-serif; color: #fff; overflow-x: hidden; }
+.thh-mem img { max-width: 100%; }
+.thh-mem a { text-decoration: none; color: inherit; }
+.thh-mem-wrap { width: 100vw; margin-left: calc(-50vw + 50%); background: #0D1523; }
+.thh-hero { position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; background: linear-gradient(135deg, #0D1523 0%, #1B2A4A 40%, #0D1523 100%); overflow: hidden; }
+.thh-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at 30% 50%, rgba(213,57,73,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(27,42,74,0.3) 0%, transparent 60%); animation: thh-pulse 8s ease-in-out infinite alternate; }
+@keyframes thh-pulse { 0% { transform: scale(1) rotate(0deg); opacity: 0.6; } 100% { transform: scale(1.1) rotate(2deg); opacity: 1; } }
+.thh-hero-content { position: relative; z-index: 2; max-width: 800px; }
+.thh-hero-badge { display: inline-block; font-family: 'Courier New', monospace; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: #D53949; border: 1px solid #D53949; padding: 8px 20px; margin-bottom: 32px; border-radius: 4px; }
+.thh-hero h1 { font-size: clamp(42px, 7vw, 88px); font-weight: 900; line-height: 1.0; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 16px; color: #fff; }
+.thh-hero h1 span { display: block; background: linear-gradient(90deg, #D53949, #FF6B7A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.thh-hero p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 40px; line-height: 1.6; }
+.thh-btn { display: inline-block; padding: 16px 48px; background: #D53949; color: #fff !important; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; }
+.thh-btn:hover { background: #FF6B7A; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(213,57,73,0.4); }
+.thh-btn-outline { background: transparent; border: 2px solid #fff; }
+.thh-btn-outline:hover { background: #fff; color: #0D1523 !important; }
+.thh-hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 56px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+.thh-hero-stat { text-align: center; }
+.thh-hero-stat strong { display: block; font-size: 32px; font-weight: 900; color: #D53949; }
+.thh-hero-stat span { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.5); }
+.thh-marquee { background: #D53949; padding: 14px 0; overflow: hidden; white-space: nowrap; }
+.thh-marquee-track { display: inline-flex; animation: thh-scroll 25s linear infinite; }
+@keyframes thh-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.thh-marquee span { display: inline-block; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; padding: 0 32px; color: #fff; }
+.thh-perks { padding: 100px 24px; background: #0D1523; text-align: center; }
+.thh-section-title { font-size: clamp(28px, 4vw, 48px); font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 16px; color: #fff; }
+.thh-section-sub { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 560px; margin: 0 auto 64px; line-height: 1.6; }
+.thh-perks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.thh-perk-card { background: linear-gradient(145deg, #141E30, #1B2A4A); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 40px 28px; transition: all 0.3s ease; }
+.thh-perk-card:hover { transform: translateY(-6px); border-color: rgba(213,57,73,0.3); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.thh-perk-icon { width: 56px; height: 56px; background: rgba(213,57,73,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.thh-perk-icon svg { width: 28px; height: 28px; fill: #D53949; }
+.thh-perk-card h3 { font-size: 18px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px; color: #fff; }
+.thh-perk-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+.thh-banner { padding: 48px 24px; background: linear-gradient(90deg, #D53949, #FF6B7A); text-align: center; }
+.thh-banner h2 { font-size: clamp(24px, 4vw, 44px); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #fff; }
+.thh-tiers { padding: 100px 24px; background: linear-gradient(180deg, #0D1523 0%, #111B2E 100%); text-align: center; }
+.thh-tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; align-items: stretch; }
+.thh-tier { background: linear-gradient(145deg, #141E30, #1B2A4A); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 48px 32px; display: flex; flex-direction: column; transition: all 0.3s ease; }
+.thh-tier:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.thh-tier.featured { border: 2px solid #D53949; position: relative; transform: scale(1.05); }
+.thh-tier.featured:hover { transform: scale(1.05) translateY(-4px); }
+.thh-tier-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #D53949; color: #fff; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; padding: 6px 20px; border-radius: 20px; white-space: nowrap; }
+.thh-tier h3 { font-size: 22px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; color: #fff; }
+.thh-tier .thh-tier-price { font-size: 48px; font-weight: 900; color: #D53949; margin: 16px 0; }
+.thh-tier .thh-tier-price small { font-size: 16px; color: rgba(255,255,255,0.4); font-weight: 400; }
+.thh-tier .thh-tier-desc { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 28px; line-height: 1.5; }
+.thh-tier ul { list-style: none; text-align: left; margin-bottom: 32px; flex-grow: 1; }
+.thh-tier ul li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 10px; }
+.thh-tier ul li::before { content: '\2713'; color: #D53949; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.thh-tier .thh-btn { width: 100%; text-align: center; }
+.thh-steps { padding: 100px 24px; background: #0D1523; text-align: center; }
+.thh-steps-grid { display: flex; justify-content: center; gap: 48px; max-width: 900px; margin: 0 auto; }
+.thh-step { flex: 1; max-width: 260px; }
+.thh-step-num { width: 64px; height: 64px; background: linear-gradient(135deg, #D53949, #FF6B7A); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; margin: 0 auto 20px; color: #fff; }
+.thh-step h3 { font-size: 18px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #fff; }
+.thh-step p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+.thh-reviews { padding: 100px 24px; background: linear-gradient(180deg, #111B2E 0%, #0D1523 100%); text-align: center; }
+.thh-reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.thh-review { background: linear-gradient(145deg, #141E30, #1B2A4A); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 36px 28px; text-align: left; }
+.thh-review-stars { color: #FFD700; font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+.thh-review p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+.thh-review-author { font-size: 14px; font-weight: 700; color: #D53949; text-transform: uppercase; letter-spacing: 1px; }
+.thh-review-role { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.thh-faq { padding: 100px 24px; background: #0D1523; }
+.thh-faq-list { max-width: 720px; margin: 0 auto; }
+.thh-faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.thh-faq-q { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; font-size: 17px; font-weight: 700; color: #fff; transition: color 0.2s; }
+.thh-faq-q:hover { color: #D53949; }
+.thh-faq-q::after { content: '+'; font-size: 24px; font-weight: 300; color: #D53949; transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+.thh-faq-item.active .thh-faq-q::after { transform: rotate(45deg); }
+.thh-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+.thh-faq-item.active .thh-faq-a { max-height: 200px; padding-bottom: 24px; }
+.thh-faq-a p { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.thh-cta { padding: 100px 24px; background: linear-gradient(135deg, #1B2A4A 0%, #0D1523 50%, #1B2A4A 100%); text-align: center; position: relative; overflow: hidden; }
+.thh-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(213,57,73,0.12) 0%, transparent 70%); }
+.thh-cta-content { position: relative; z-index: 2; }
+.thh-cta h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; text-transform: uppercase; margin-bottom: 20px; color: #fff; }
+.thh-cta p { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+@media (max-width: 768px) {
+  .thh-hero { min-height: 70vh; padding: 80px 20px 60px; }
+  .thh-hero-stats { flex-direction: column; gap: 20px; }
+  .thh-perks-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .thh-tiers-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .thh-tier.featured { transform: none; }
+  .thh-tier.featured:hover { transform: translateY(-4px); }
+  .thh-steps-grid { flex-direction: column; align-items: center; }
+  .thh-reviews-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .thh-hero h1 { font-size: 36px; }
+  .thh-hero p { font-size: 16px; }
+  .thh-faq-q { font-size: 15px; }
+}
+</style>
+<div class="thh-mem"><div class="thh-mem-wrap">
+<section class="thh-hero"><div class="thh-hero-content">
+<div class="thh-hero-badge">✦ Exclusief Lidmaatschap ✦</div>
+<h1>Word lid van<span>The Health House Club</span></h1>
+<p>Jouw persoonlijke toegang tot exclusieve kortingen, gratis verzending en VIP-voordelen bij The Health House.</p>
+<a href="#thh-tiers" class="thh-btn">Bekijk Lidmaatschap</a>
+<div class="thh-hero-stats"><div class="thh-hero-stat"><strong>1000+</strong><span>Tevreden Leden</span></div><div class="thh-hero-stat"><strong>15%</strong><span>Korting Op Alles</span></div><div class="thh-hero-stat"><strong>€0</strong><span>Verzendkosten</span></div></div>
+</div></section>
+<div class="thh-marquee"><div class="thh-marquee-track">
+<span>★ KORTING OP ALLE SUPPLEMENTEN</span><span>★ GRATIS VERZENDING</span><span>★ EXCLUSIEVE IN-STORE DEALS</span><span>★ EARLY ACCESS NIEUWE PRODUCTEN</span><span>★ PERSOONLIJK VOEDINGSADVIES</span><span>★ VIP COMMUNITY</span><span>★ KORTING OP ALLE SUPPLEMENTEN</span><span>★ GRATIS VERZENDING</span><span>★ EXCLUSIEVE IN-STORE DEALS</span><span>★ EARLY ACCESS NIEUWE PRODUCTEN</span><span>★ PERSOONLIJK VOEDINGSADVIES</span><span>★ VIP COMMUNITY</span>
+</div></div>
+<section class="thh-perks">
+<h2 class="thh-section-title">Waarom Lid Worden?</h2>
+<p class="thh-section-sub">Exclusieve voordelen die jouw supplement journey naar het volgende niveau tillen.</p>
+<div class="thh-perks-grid">
+<div class="thh-perk-card"><div class="thh-perk-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div><h3>15% Korting</h3><p>Op het complete assortiment. Van whey protein tot creatine — altijd de beste prijs als lid.</p></div>
+<div class="thh-perk-card"><div class="thh-perk-icon"><svg viewBox="0 0 24 24"><path d="M18 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM19.5 9.5L21.46 12H17V9.5h2.5zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM19.5 8H17V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg></div><h3>Gratis Verzending</h3><p>Geen minimaal bestelbedrag. Elke bestelling wordt gratis bij je thuisbezorgd.</p></div>
+<div class="thh-perk-card"><div class="thh-perk-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg></div><h3>Exclusieve Deals</h3><p>Toegang tot member-only aanbiedingen en flash sales die niemand anders krijgt.</p></div>
+<div class="thh-perk-card"><div class="thh-perk-icon"><svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></div><h3>Early Access</h3><p>Wees de eerste die nieuwe producten en limited editions kan bestellen, vóór de officiële lancering.</p></div>
+<div class="thh-perk-card"><div class="thh-perk-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div><h3>VIP Community</h3><p>Krijg toegang tot onze besloten community met gelijkgestemde sporters en voedingsexperts.</p></div>
+<div class="thh-perk-card"><div class="thh-perk-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><h3>Persoonlijk Advies</h3><p>Gratis consultatie met onze voedingsexperts. Krijg een supplementenplan op maat.</p></div>
+</div></section>
+<div class="thh-banner"><h2>Train Harder · Recover Faster · Save More</h2></div>
+<section class="thh-tiers" id="thh-tiers">
+<h2 class="thh-section-title">Kies Jouw Plan</h2>
+<p class="thh-section-sub">Van casual sporter tot dedicated atleet — er is een plan voor iedereen.</p>
+<div class="thh-tiers-grid">
+<div class="thh-tier"><h3>Starter</h3><div class="thh-tier-price">Gratis</div><div class="thh-tier-desc">Perfect om te beginnen met besparen op jouw favoriete supplementen.</div><ul><li>5% korting op alle producten</li><li>Gratis verzending boven €50</li><li>Toegang tot member deals</li><li>Maandelijkse nieuwsbrief</li><li>Verjaardagsverrassing</li></ul><a href="/mijn-account/" class="thh-btn thh-btn-outline">Gratis Aanmelden</a></div>
+<div class="thh-tier featured"><div class="thh-tier-badge">Meest Gekozen</div><h3>Pro</h3><div class="thh-tier-price">€9<small>,99/mnd</small></div><div class="thh-tier-desc">Voor de serieuze sporter die het maximale uit training en supplementen haalt.</div><ul><li>15% korting op alle producten</li><li>Altijd gratis verzending</li><li>Early access nieuwe producten</li><li>Exclusieve flash sales</li><li>Gratis supplementenadvies</li><li>VIP community toegang</li><li>Maandelijks sample pakket</li></ul><a href="/mijn-account/" class="thh-btn">Word Pro Lid</a></div>
+<div class="thh-tier"><h3>Elite</h3><div class="thh-tier-price">€19<small>,99/mnd</small></div><div class="thh-tier-desc">Het ultieme pakket voor atleten die alles willen. Maximale korting, maximale service.</div><ul><li>25% korting op alle producten</li><li>Altijd gratis express verzending</li><li>Persoonlijk voedingsplan</li><li>1-op-1 coaching sessies</li><li>Exclusieve merchandise</li><li>Priority klantenservice</li><li>Alle Pro voordelen inclusief</li></ul><a href="/mijn-account/" class="thh-btn thh-btn-outline">Word Elite Lid</a></div>
+</div></section>
+<section class="thh-steps">
+<h2 class="thh-section-title">Hoe Het Werkt</h2>
+<p class="thh-section-sub">In 3 simpele stappen ben je lid en profiteer je direct van alle voordelen.</p>
+<div class="thh-steps-grid">
+<div class="thh-step"><div class="thh-step-num">1</div><h3>Kies Je Plan</h3><p>Selecteer het lidmaatschap dat bij jou past: Starter, Pro of Elite.</p></div>
+<div class="thh-step"><div class="thh-step-num">2</div><h3>Maak Een Account</h3><p>Registreer je in minder dan 2 minuten. Geen gedoe, geen kleine lettertjes.</p></div>
+<div class="thh-step"><div class="thh-step-num">3</div><h3>Start Met Besparen</h3><p>Je korting wordt automatisch toegepast. Bestel en bespaar direct.</p></div>
+</div></section>
+<section class="thh-reviews">
+<h2 class="thh-section-title">Wat Onze Leden Zeggen</h2>
+<p class="thh-section-sub">Meer dan 1000 tevreden leden gingen je voor.</p>
+<div class="thh-reviews-grid">
+<div class="thh-review"><div class="thh-review-stars">★★★★★</div><p>"Sinds ik Pro lid ben bespaar ik maandelijks minstens €40 op mijn supplementen. De gratis verzending is top!"</p><div class="thh-review-author">Kevin V.</div><div class="thh-review-role">Pro Lid sinds 2024</div></div>
+<div class="thh-review"><div class="thh-review-stars">★★★★★</div><p>"Het persoonlijk voedingsadvies bij Elite is ongelooflijk waardevol. Mijn prestaties zijn enorm verbeterd."</p><div class="thh-review-author">Sarah M.</div><div class="thh-review-role">Elite Lid sinds 2023</div></div>
+<div class="thh-review"><div class="thh-review-stars">★★★★★</div><p>"Als Starter lid betaal ik niks en krijg toch 5% korting op alles. Het is een no-brainer!"</p><div class="thh-review-author">Mohammed A.</div><div class="thh-review-role">Starter Lid sinds 2025</div></div>
+</div></section>
+<section class="thh-faq">
+<h2 class="thh-section-title" style="text-align:center;">Veelgestelde Vragen</h2>
+<p class="thh-section-sub" style="text-align:center;margin-bottom:48px;">Alles wat je moet weten over The Health House Club.</p>
+<div class="thh-faq-list">
+<div class="thh-faq-item"><div class="thh-faq-q" onclick="this.parentElement.classList.toggle('active')">Kan ik mijn lidmaatschap op elk moment opzeggen?</div><div class="thh-faq-a"><p>Ja, je kunt je lidmaatschap op elk moment opzeggen. Er zijn geen opzegkosten en je behoudt je voordelen tot het einde van de betaalperiode.</p></div></div>
+<div class="thh-faq-item"><div class="thh-faq-q" onclick="this.parentElement.classList.toggle('active')">Werkt de korting ook in de fysieke winkels?</div><div class="thh-faq-a"><p>Absoluut! Je ledenkorting geldt zowel online als in onze fysieke winkels. Toon gewoon je digitale ledenpas aan de kassa.</p></div></div>
+<div class="thh-faq-item"><div class="thh-faq-q" onclick="this.parentElement.classList.toggle('active')">Kan ik upgraden of downgraden?</div><div class="thh-faq-a"><p>Ja, je kunt op elk moment wisselen tussen plannen. Bij een upgrade krijg je direct toegang tot de extra voordelen. Bij een downgrade gaat de wijziging in bij de volgende betaalperiode.</p></div></div>
+<div class="thh-faq-item"><div class="thh-faq-q" onclick="this.parentElement.classList.toggle('active')">Is de korting combineerbaar met andere acties?</div><div class="thh-faq-a"><p>Je ledenkorting is combineerbaar met de meeste acties. Bij bepaalde flash sales of clearance items kan het zijn dat de ledenkorting niet extra gestapeld kan worden.</p></div></div>
+<div class="thh-faq-item"><div class="thh-faq-q" onclick="this.parentElement.classList.toggle('active')">Wat zit er in het maandelijkse sample pakket?</div><div class="thh-faq-a"><p>Pro en Elite leden ontvangen maandelijks een verraspakket met samples van nieuwe producten, limited editions en favorieten van ons team. De inhoud varieert elke maand.</p></div></div>
+</div></section>
+<div class="thh-marquee"><div class="thh-marquee-track">
+<span>★ WORD LID</span><span>★ BESPAAR MEER</span><span>★ TRAIN HARDER</span><span>★ RECOVER FASTER</span><span>★ THE HEALTH HOUSE CLUB</span><span>★ WORD LID</span><span>★ BESPAAR MEER</span><span>★ TRAIN HARDER</span><span>★ RECOVER FASTER</span><span>★ THE HEALTH HOUSE CLUB</span>
+</div></div>
+<section class="thh-cta"><div class="thh-cta-content">
+<h2>Klaar Om Lid<br>Te Worden?</h2>
+<p>Sluit je aan bij meer dan 1000 sporters die al besparen met The Health House Club.</p>
+<a href="#thh-tiers" class="thh-btn">Word Nu Lid</a>
+</div></section>
+</div></div>
+<!-- /wp:html -->
