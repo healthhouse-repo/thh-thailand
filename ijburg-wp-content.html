@@ -1,0 +1,638 @@
+<!-- wp:html -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.ijburg-page * {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.ijburg-page {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Announcement Bar */
+.ijburg-announce {
+    background: #E31E24;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.ijburg-hero {
+    background: linear-gradient(135deg, #021152 0%, #0a1a5c 50%, #0d2060 100%);
+    padding: 100px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.ijburg-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(227,30,36,0.08) 0%, transparent 70%);
+    animation: heroGlow 8s ease-in-out infinite;
+}
+@keyframes heroGlow {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+.ijburg-hero-badge {
+    display: inline-block;
+    background: rgba(227,30,36,0.15);
+    border: 1px solid rgba(227,30,36,0.3);
+    color: #E31E24;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+}
+.ijburg-hero h1 {
+    color: white;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+.ijburg-hero h1 span {
+    color: #E31E24;
+}
+.ijburg-hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Countdown */
+.ijburg-countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+.ijburg-countdown-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px 25px;
+    min-width: 100px;
+    backdrop-filter: blur(10px);
+}
+.ijburg-countdown-number {
+    color: white;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+}
+.ijburg-countdown-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Info Cards */
+.ijburg-info {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+.ijburg-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.ijburg-info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.ijburg-info-card:hover {
+    transform: translateY(-5px);
+}
+.ijburg-info-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.ijburg-info-card h3 {
+    color: #021152;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+.ijburg-info-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Opening Times */
+.ijburg-times {
+    padding: 80px 20px;
+    background: white;
+}
+.ijburg-section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.ijburg-section-title h2 {
+    color: #021152;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+.ijburg-section-title p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+.ijburg-times-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: start;
+}
+.ijburg-times-card {
+    background: #f8f8f8;
+    border-radius: 16px;
+    padding: 40px;
+}
+.ijburg-times-card h3 {
+    color: #021152;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ijburg-time-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+    color: #333;
+    font-size: 15px;
+}
+.ijburg-time-row:last-child {
+    border-bottom: none;
+}
+.ijburg-map-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.ijburg-map-card iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+.ijburg-map-address {
+    background: #021152;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+.ijburg-map-address a {
+    color: #E31E24;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Categories */
+.ijburg-categories {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+.ijburg-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.ijburg-cat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.ijburg-cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.ijburg-cat-emoji {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+.ijburg-cat-card h4 {
+    color: #021152;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+.ijburg-cat-card p {
+    color: #999;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Signup Section */
+.ijburg-signup {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #021152, #0d2060);
+    text-align: center;
+}
+.ijburg-signup h2 {
+    color: white;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+}
+.ijburg-signup h2 span {
+    color: #E31E24;
+}
+.ijburg-signup-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    max-width: 600px;
+    margin: 15px auto 30px;
+    line-height: 1.6;
+}
+.ijburg-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+.ijburg-benefit {
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ijburg-benefit-check {
+    background: #E31E24;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+.ijburg-form {
+    max-width: 550px;
+    margin: 0 auto;
+}
+.ijburg-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.ijburg-form input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s;
+}
+.ijburg-form input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+.ijburg-form input:focus {
+    outline: none;
+    border-color: #E31E24;
+    background: rgba(255,255,255,0.12);
+}
+.ijburg-form-full {
+    margin-bottom: 12px;
+}
+.ijburg-form-btn {
+    width: 100%;
+    padding: 18px;
+    background: #E31E24;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.1s;
+}
+.ijburg-form-btn:hover {
+    background: #c91a1f;
+}
+.ijburg-form-btn:active {
+    transform: scale(0.98);
+}
+.ijburg-form-privacy {
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* Social */
+.ijburg-social {
+    padding: 60px 20px;
+    background: #0a0f2e;
+    text-align: center;
+}
+.ijburg-social h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+.ijburg-social p {
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    margin: 0 0 25px;
+}
+.ijburg-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.ijburg-social-link {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.ijburg-social-link:hover {
+    background: #E31E24;
+    border-color: #E31E24;
+    transform: scale(1.1);
+}
+.ijburg-social-link svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ijburg-countdown { gap: 10px; }
+    .ijburg-countdown-item { min-width: 70px; padding: 15px; }
+    .ijburg-countdown-number { font-size: 30px; }
+    .ijburg-times-grid { grid-template-columns: 1fr; }
+    .ijburg-cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .ijburg-form-row { grid-template-columns: 1fr; }
+    .ijburg-benefits { flex-direction: column; align-items: center; }
+}
+</style>
+
+<div class="ijburg-page">
+
+<!-- Announcement Bar -->
+<div class="ijburg-announce">
+    🎉 OPENING 10 — 15 JULI 2026 &nbsp;|&nbsp; IJBURGLAAN 837, AMSTERDAM
+</div>
+
+<!-- Hero Section -->
+<div class="ijburg-hero">
+    <div class="ijburg-hero-badge">📍 AMSTERDAM IJBURG</div>
+    <h1>WIJ KOMEN NAAR <span>IJBURG</span></h1>
+    <p class="ijburg-hero-sub">Dé supplementenwinkel van Amsterdam IJburg — binnenkort open!</p>
+    
+    <div class="ijburg-countdown" id="ijburg-countdown">
+        <div class="ijburg-countdown-item">
+            <div class="ijburg-countdown-number" id="ij-days">--</div>
+            <div class="ijburg-countdown-label">Dagen</div>
+        </div>
+        <div class="ijburg-countdown-item">
+            <div class="ijburg-countdown-number" id="ij-hours">--</div>
+            <div class="ijburg-countdown-label">Uren</div>
+        </div>
+        <div class="ijburg-countdown-item">
+            <div class="ijburg-countdown-number" id="ij-mins">--</div>
+            <div class="ijburg-countdown-label">Minuten</div>
+        </div>
+        <div class="ijburg-countdown-item">
+            <div class="ijburg-countdown-number" id="ij-secs">--</div>
+            <div class="ijburg-countdown-label">Seconden</div>
+        </div>
+    </div>
+</div>
+
+<!-- Info Cards -->
+<div class="ijburg-info">
+    <div class="ijburg-info-grid">
+        <div class="ijburg-info-card">
+            <div class="ijburg-info-icon">💪</div>
+            <h3>600+ Producten</h3>
+            <p>Van whey protein tot vitamines — alles wat je nodig hebt onder één dak.</p>
+        </div>
+        <div class="ijburg-info-card">
+            <div class="ijburg-info-icon">🎯</div>
+            <h3>Expert Advies</h3>
+            <p>Ons team helpt je met persoonlijk advies om jouw doelen te bereiken.</p>
+        </div>
+        <div class="ijburg-info-card">
+            <div class="ijburg-info-icon">⭐</div>
+            <h3>Topmerken</h3>
+            <p>Alleen A-merken zoals Optimum Nutrition, Applied Nutrition, Ryse & meer.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Opening Times + Map -->
+<div class="ijburg-times">
+    <div class="ijburg-section-title">
+        <h2>Openingstijden</h2>
+        <p>Wij zijn dagelijks voor je klaar in Amsterdam IJburg.</p>
+    </div>
+    <div class="ijburg-times-grid">
+        <div class="ijburg-times-card">
+            <h3>🕐 Openingstijden</h3>
+            <div class="ijburg-time-row"><span>Maandag</span><span>10:00 — 18:00</span></div>
+            <div class="ijburg-time-row"><span>Dinsdag</span><span>10:00 — 18:00</span></div>
+            <div class="ijburg-time-row"><span>Woensdag</span><span>10:00 — 18:00</span></div>
+            <div class="ijburg-time-row"><span>Donderdag</span><span>10:00 — 18:00</span></div>
+            <div class="ijburg-time-row"><span>Vrijdag</span><span>10:00 — 18:00</span></div>
+            <div class="ijburg-time-row"><span>Zaterdag</span><span>10:00 — 18:00</span></div>
+            <div class="ijburg-time-row"><span>Zondag</span><span>12:00 — 18:00</span></div>
+        </div>
+        <div class="ijburg-map-card">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5!2d4.9570!3d52.3530!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60930d5!2sIJburglaan+837!5e0!3m2!1snl!2snl!4v1" loading="lazy"></iframe>
+            <div class="ijburg-map-address">
+                📍 IJburglaan 837, Amsterdam IJburg &nbsp;|&nbsp; <a href="https://maps.google.com/maps?q=IJburglaan+837+Amsterdam" target="_blank">Route plannen →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Categories -->
+<div class="ijburg-categories">
+    <div class="ijburg-section-title">
+        <h2>Wat Vind Je Bij Ons?</h2>
+        <p>Een compleet assortiment voor jouw gezondheid en sportdoelen</p>
+    </div>
+    <div class="ijburg-cat-grid">
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">💪</div>
+            <h4>Proteïne</h4>
+            <p>Whey, Casein, Vegan</p>
+        </div>
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">⚡</div>
+            <h4>Pre-Workout</h4>
+            <p>Energie & Focus</p>
+        </div>
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">🔥</div>
+            <h4>Vetverbranders</h4>
+            <p>Afvallen & Snijden</p>
+        </div>
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">💊</div>
+            <h4>Vitamines</h4>
+            <p>Gezondheid & Vitaliteit</p>
+        </div>
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">🥜</div>
+            <h4>Gezonde Snacks</h4>
+            <p>Repen & Meer</p>
+        </div>
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">🏋️</div>
+            <h4>Creatine</h4>
+            <p>Kracht & Power</p>
+        </div>
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">🥤</div>
+            <h4>Verse Shakes</h4>
+            <p>Vers gemaakt in de winkel</p>
+        </div>
+        <div class="ijburg-cat-card">
+            <div class="ijburg-cat-emoji">🎯</div>
+            <h4>Accessoires</h4>
+            <p>Shakers & Gear</p>
+        </div>
+    </div>
+</div>
+
+<!-- Signup -->
+<div class="ijburg-signup">
+    <div style="font-size:48px;margin-bottom:15px;">🎁</div>
+    <h2>ONTVANG <span>20% KORTING</span></h2>
+    <h2 style="font-size:clamp(20px,3vw,32px);margin-top:0;">+ GRATIS GOODIEBAG</h2>
+    <p class="ijburg-signup-sub">Meld je aan en ontvang een persoonlijke welkomstvoucher en een gratis gepersonaliseerde goodiebag bij je eerste bezoek aan The Health House IJburg.</p>
+    
+    <div class="ijburg-benefits">
+        <div class="ijburg-benefit"><div class="ijburg-benefit-check">✓</div> 20% korting voucher</div>
+        <div class="ijburg-benefit"><div class="ijburg-benefit-check">✓</div> Gratis goodiebag</div>
+        <div class="ijburg-benefit"><div class="ijburg-benefit-check">✓</div> Exclusieve updates</div>
+    </div>
+    
+    <form class="ijburg-form" action="https://formsubmit.co/info@thehealthhouse.nl" method="POST">
+        <input type="hidden" name="_subject" value="Nieuwe aanmelding IJburg Opening">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://thehealthhouse.eu/ijburg/?success=1">
+        <input type="hidden" name="_template" value="table">
+        <div class="ijburg-form-row">
+            <input type="text" name="voornaam" placeholder="Voornaam" required>
+            <input type="text" name="achternaam" placeholder="Achternaam" required>
+        </div>
+        <div class="ijburg-form-full">
+            <input type="email" name="email" placeholder="E-mailadres" required>
+        </div>
+        <div class="ijburg-form-full">
+            <input type="tel" name="telefoon" placeholder="Telefoonnummer (optioneel)">
+        </div>
+        <button type="submit" class="ijburg-form-btn">MELD JE AAN — HET IS GRATIS!</button>
+        <p class="ijburg-form-privacy">We respecteren je privacy. Je gegevens worden alleen gebruikt voor deze actie.</p>
+    </form>
+</div>
+
+<!-- Social -->
+<div class="ijburg-social">
+    <h3>Volg Ons Voor Updates</h3>
+    <p>Blijf op de hoogte van onze opening, aanbiedingen en meer.</p>
+    <div class="ijburg-social-links">
+        <a href="https://www.instagram.com/thehealthhouse.nl/" target="_blank" class="ijburg-social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/thehealthhouse.nl" target="_blank" class="ijburg-social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@thehealthhouse.nl" target="_blank" class="ijburg-social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+    </div>
+</div>
+
+</div>
+
+<script>
+(function() {
+    const target = new Date('2026-07-10T10:00:00+02:00').getTime();
+    function update() {
+        const now = Date.now();
+        const diff = target - now;
+        if (diff <= 0) {
+            document.getElementById('ij-days').textContent = '0';
+            document.getElementById('ij-hours').textContent = '0';
+            document.getElementById('ij-mins').textContent = '0';
+            document.getElementById('ij-secs').textContent = '0';
+            return;
+        }
+        document.getElementById('ij-days').textContent = Math.floor(diff / 86400000);
+        document.getElementById('ij-hours').textContent = Math.floor((diff % 86400000) / 3600000);
+        document.getElementById('ij-mins').textContent = Math.floor((diff % 3600000) / 60000);
+        document.getElementById('ij-secs').textContent = Math.floor((diff % 60000) / 1000);
+    }
+    update();
+    setInterval(update, 1000);
+})();
+</script>
+<!-- /wp:html -->
