@@ -3,11 +3,12 @@
 // Injects CSS only on the /ijburg/ page
 add_action('wp_head', function() {
     if (!is_page('ijburg')) return;
-    echo '<style id="ijburg-css">
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    ?>
+    <style id="ijburg-css">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 .ijburg-page * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 .ijburg-page {
@@ -18,70 +19,64 @@ add_action('wp_head', function() {
 
 /* Announcement Bar */
 .ijburg-announce {
-    background: #E31E24;
+    background: #E31837;
     color: white;
     text-align: center;
     padding: 12px 20px;
-    font-weight: 600;
     font-size: 14px;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
+/* Location Badge */
+.ijburg-badge {
+    display: inline-block;
+    background: rgba(227, 24, 55, 0.1);
+    color: #E31837;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
 /* Hero Section */
 .ijburg-hero {
-    background: linear-gradient(135deg, #021152 0%, #0a1a5c 50%, #0d2060 100%);
-    padding: 100px 20px 80px;
+    background: linear-gradient(135deg, #0A1628 0%, #1a2a4a 50%, #0A1628 100%);
+    color: white;
     text-align: center;
+    padding: 80px 20px 60px;
     position: relative;
     overflow: hidden;
 }
 .ijburg-hero::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(ellipse at center, rgba(227,30,36,0.08) 0%, transparent 70%);
-    animation: heroGlow 8s ease-in-out infinite;
-}
-@keyframes heroGlow {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 1; }
-}
-.ijburg-hero-badge {
-    display: inline-block;
-    background: rgba(227,30,36,0.15);
-    border: 1px solid rgba(227,30,36,0.3);
-    color: #E31E24;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    position: relative;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(227,24,55,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(227,24,55,0.1) 0%, transparent 60%);
+    pointer-events: none;
 }
 .ijburg-hero h1 {
-    color: white;
-    font-size: clamp(36px, 6vw, 64px);
+    font-size: clamp(36px, 6vw, 72px);
     font-weight: 900;
-    line-height: 1.1;
     margin: 0 0 10px;
-    position: relative;
     text-transform: uppercase;
+    position: relative;
+    color: white;
 }
 .ijburg-hero h1 span {
-    color: #E31E24;
+    color: #E31837;
 }
-.ijburg-hero-sub {
-    color: rgba(255,255,255,0.7);
+.ijburg-hero p {
     font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 50px;
+    opacity: 0.8;
+    margin: 0 0 40px;
     position: relative;
+    color: white;
 }
 
 /* Countdown */
@@ -93,31 +88,32 @@ add_action('wp_head', function() {
     position: relative;
 }
 .ijburg-countdown-item {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 16px;
-    padding: 20px 25px;
-    min-width: 100px;
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px 30px;
+    min-width: 100px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 .ijburg-countdown-number {
-    color: white;
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 800;
+    color: #E31837;
     line-height: 1;
 }
 .ijburg-countdown-label {
-    color: rgba(255,255,255,0.5);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    opacity: 0.7;
     margin-top: 5px;
+    color: white;
 }
 
 /* Info Cards */
-.ijburg-info {
-    padding: 80px 20px;
-    background: #f8f8f8;
+.ijburg-info-section {
+    padding: 60px 20px;
+    background: #f8f9fa;
 }
 .ijburg-info-grid {
     display: grid;
@@ -131,8 +127,8 @@ add_action('wp_head', function() {
     border-radius: 16px;
     padding: 40px 30px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
 }
 .ijburg-info-card:hover {
     transform: translateY(-5px);
@@ -142,103 +138,110 @@ add_action('wp_head', function() {
     margin-bottom: 20px;
 }
 .ijburg-info-card h3 {
-    color: #021152;
     font-size: 20px;
     font-weight: 700;
+    color: #0A1628;
     margin: 0 0 10px;
 }
 .ijburg-info-card p {
-    color: #666;
     font-size: 15px;
-    line-height: 1.6;
+    color: #666;
     margin: 0;
+    line-height: 1.6;
 }
 
-/* Opening Times */
-.ijburg-times {
-    padding: 80px 20px;
+/* Opening Hours */
+.ijburg-hours-section {
+    padding: 60px 20px;
     background: white;
 }
-.ijburg-section-title {
+.ijburg-hours-section h2 {
     text-align: center;
-    margin-bottom: 50px;
-}
-.ijburg-section-title h2 {
-    color: #021152;
     font-size: 32px;
     font-weight: 800;
+    color: #0A1628;
     margin: 0 0 10px;
-    text-transform: uppercase;
 }
-.ijburg-section-title p {
+.ijburg-hours-subtitle {
+    text-align: center;
     color: #666;
     font-size: 16px;
-    margin: 0;
+    margin: 0 0 40px;
 }
-.ijburg-times-grid {
+.ijburg-hours-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
-    align-items: start;
 }
-.ijburg-times-card {
-    background: #f8f8f8;
+.ijburg-hours-card {
+    background: #f8f9fa;
     border-radius: 16px;
-    padding: 40px;
+    padding: 30px;
 }
-.ijburg-times-card h3 {
-    color: #021152;
-    font-size: 20px;
+.ijburg-hours-card h3 {
+    font-size: 18px;
     font-weight: 700;
-    margin: 0 0 25px;
+    color: #0A1628;
+    margin: 0 0 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.ijburg-time-row {
+.ijburg-hours-row {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid #e5e5e5;
-    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
     font-size: 15px;
 }
-.ijburg-time-row:last-child {
+.ijburg-hours-row:last-child {
     border-bottom: none;
+}
+.ijburg-hours-day {
+    color: #333;
+    font-weight: 500;
+}
+.ijburg-hours-time {
+    color: #E31837;
+    font-weight: 600;
 }
 .ijburg-map-card {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
-.ijburg-map-card iframe {
-    width: 100%;
-    height: 350px;
-    border: none;
-}
-.ijburg-map-address {
-    background: #021152;
+.ijburg-address-bar {
+    background: #0A1628;
     color: white;
-    padding: 20px;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 500;
     text-align: center;
-    font-size: 15px;
-}
-.ijburg-map-address a {
-    color: #E31E24;
-    text-decoration: none;
-    font-weight: 600;
 }
 
-/* Categories */
+/* Product Categories */
 .ijburg-categories {
-    padding: 80px 20px;
-    background: #f8f8f8;
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+.ijburg-categories h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #0A1628;
+    margin: 0 0 10px;
+}
+.ijburg-categories-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin: 0 0 40px;
 }
 .ijburg-cat-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     max-width: 1100px;
     margin: 0 auto;
@@ -246,299 +249,217 @@ add_action('wp_head', function() {
 .ijburg-cat-card {
     background: white;
     border-radius: 12px;
-    padding: 30px 20px;
+    padding: 25px 20px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    cursor: default;
 }
 .ijburg-cat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 .ijburg-cat-emoji {
-    font-size: 40px;
-    margin-bottom: 12px;
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 .ijburg-cat-card h4 {
-    color: #021152;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    margin: 0 0 5px;
-}
-.ijburg-cat-card p {
-    color: #999;
-    font-size: 13px;
+    color: #0A1628;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Signup Section */
 .ijburg-signup {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #021152, #0d2060);
+    background: linear-gradient(135deg, #0A1628 0%, #1a2a4a 100%);
+    color: white;
     text-align: center;
 }
 .ijburg-signup h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 10px;
     color: white;
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 900;
-    margin: 0 0 5px;
-    text-transform: uppercase;
 }
-.ijburg-signup h2 span {
-    color: #E31E24;
-}
-.ijburg-signup-sub {
-    color: rgba(255,255,255,0.7);
-    font-size: 16px;
-    max-width: 600px;
-    margin: 15px auto 30px;
-    line-height: 1.6;
-}
-.ijburg-benefits {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-.ijburg-benefit {
+.ijburg-signup-subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    margin: 0 0 40px;
     color: white;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
-.ijburg-benefit-check {
-    background: #E31E24;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    flex-shrink: 0;
-}
-.ijburg-form {
-    max-width: 550px;
+.ijburg-signup-form {
+    max-width: 500px;
     margin: 0 auto;
 }
-.ijburg-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
+.ijburg-form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-align: left;
+    color: rgba(255,255,255,0.8);
 }
-.ijburg-form input {
+.ijburg-signup-form input {
     width: 100%;
-    padding: 16px 20px;
-    border: 1px solid rgba(255,255,255,0.2);
+    padding: 14px 20px;
+    border: 2px solid rgba(255,255,255,0.2);
     border-radius: 10px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.1);
     color: white;
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 15px;
     transition: border-color 0.3s;
 }
-.ijburg-form input::placeholder {
-    color: rgba(255,255,255,0.4);
+.ijburg-signup-form input::placeholder {
+    color: rgba(255,255,255,0.5);
 }
-.ijburg-form input:focus {
+.ijburg-signup-form input:focus {
     outline: none;
-    border-color: #E31E24;
-    background: rgba(255,255,255,0.12);
+    border-color: #E31837;
 }
-.ijburg-form-full {
-    margin-bottom: 12px;
-}
-.ijburg-form-btn {
+.ijburg-signup-btn {
     width: 100%;
-    padding: 18px;
-    background: #E31E24;
+    padding: 16px;
+    background: #E31837;
     color: white;
     border: none;
     border-radius: 10px;
     font-size: 16px;
     font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.3s, transform 0.1s;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+    margin-top: 10px;
 }
-.ijburg-form-btn:hover {
-    background: #c91a1f;
+.ijburg-signup-btn:hover {
+    background: #c41430;
+    transform: translateY(-2px);
 }
-.ijburg-form-btn:active {
-    transform: scale(0.98);
-}
-.ijburg-form-privacy {
-    color: rgba(255,255,255,0.4);
-    font-size: 12px;
+.ijburg-signup-note {
+    font-size: 13px;
+    opacity: 0.6;
     margin-top: 15px;
+    color: white;
 }
 
-/* Social */
+/* Social Links */
 .ijburg-social {
-    padding: 60px 20px;
-    background: #0a0f2e;
-    text-align: center;
-}
-.ijburg-social h3 {
-    color: white;
-    font-size: 24px;
-    font-weight: 800;
-    margin: 0 0 8px;
-}
-.ijburg-social p {
-    color: rgba(255,255,255,0.5);
-    font-size: 14px;
-    margin: 0 0 25px;
-}
-.ijburg-social-links {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    margin-top: 40px;
 }
-.ijburg-social-link {
-    width: 50px;
-    height: 50px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 50%;
+.ijburg-social a {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
     color: white;
     text-decoration: none;
-    transition: all 0.3s;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
 }
-.ijburg-social-link:hover {
-    background: #E31E24;
-    border-color: #E31E24;
-    transform: scale(1.1);
-}
-.ijburg-social-link svg {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
+.ijburg-social a:hover {
+    background: #E31837;
+    transform: translateY(-3px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .ijburg-countdown { gap: 10px; }
-    .ijburg-countdown-item { min-width: 70px; padding: 15px; }
-    .ijburg-countdown-number { font-size: 30px; }
-    .ijburg-times-grid { grid-template-columns: 1fr; }
-    .ijburg-cat-grid { grid-template-columns: repeat(2, 1fr); }
-    .ijburg-form-row { grid-template-columns: 1fr; }
-    .ijburg-hero-footer-grid { grid-template-columns: 1fr 1fr; }
-    .ijburg-benefits { flex-direction: column; align-items: center; }
-}
-
-/* Form Labels */
-.ijburg-form-label {
-    display: block;
-    color: rgba(255,255,255,0.8);
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.ijburg-form-label .required {
-    color: #E31E24;
-}
-
-/* Hero Footer */
+/* Hero Footer CTA */
 .ijburg-hero-footer {
-    background: linear-gradient(135deg, #021152 0%, #0d2060 100%);
-    padding: 60px 20px;
+    background: linear-gradient(135deg, #E31837 0%, #c41430 100%);
+    color: white;
     text-align: center;
+    padding: 60px 20px;
     position: relative;
     overflow: hidden;
 }
 .ijburg-hero-footer::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at 30% 50%, rgba(227,30,36,0.1) 0%, transparent 60%);
-}
-.ijburg-hero-footer-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
 }
 .ijburg-hero-footer h2 {
-    color: white;
     font-size: clamp(24px, 4vw, 40px);
-    font-weight: 900;
+    font-weight: 800;
+    margin: 0 0 15px;
     text-transform: uppercase;
-    margin: 0 0 10px;
-    line-height: 1.2;
-}
-.ijburg-hero-footer h2 span {
-    color: #E31E24;
+    position: relative;
+    color: white;
 }
 .ijburg-hero-footer p {
-    color: rgba(255,255,255,0.7);
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0 auto 30px;
-    max-width: 650px;
-}
-.ijburg-hero-footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-    margin-bottom: 35px;
-}
-.ijburg-hf-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 20px;
-    text-align: left;
-}
-.ijburg-hf-icon {
-    font-size: 28px;
-    flex-shrink: 0;
-}
-.ijburg-hf-text h4 {
+    font-size: 18px;
+    opacity: 0.9;
+    margin: 0 0 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
     color: white;
-    font-size: 15px;
-    font-weight: 700;
-    margin: 0 0 3px;
-}
-.ijburg-hf-text p {
-    color: rgba(255,255,255,0.5);
-    font-size: 13px;
-    margin: 0;
 }
 .ijburg-hero-footer-btn {
     display: inline-block;
-    background: #E31E24;
-    color: white;
-    padding: 16px 50px;
+    padding: 16px 40px;
+    background: white;
+    color: #E31837;
     border-radius: 10px;
     font-size: 16px;
     font-weight: 700;
-    text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.3s, transform 0.1s;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
 }
 .ijburg-hero-footer-btn:hover {
-    background: #c91a1f;
-    color: white;
-    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: #E31837;
 }
-</style>';
-});
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ijburg-hero {
+        padding: 50px 15px 40px;
+    }
+    .ijburg-countdown {
+        gap: 10px;
+    }
+    .ijburg-countdown-item {
+        padding: 15px 20px;
+        min-width: 70px;
+    }
+    .ijburg-countdown-number {
+        font-size: 32px;
+    }
+    .ijburg-hours-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .ijburg-cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ijburg-hero-footer {
+        padding: 40px 15px;
+    }
+}
+    </style>
+    <?php
+}, 999);
