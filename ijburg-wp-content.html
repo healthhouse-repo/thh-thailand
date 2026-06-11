@@ -1,4 +1,4 @@
-<!-- wp:html -->
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -427,8 +427,116 @@
     .ijburg-times-grid { grid-template-columns: 1fr; }
     .ijburg-cat-grid { grid-template-columns: repeat(2, 1fr); }
     .ijburg-form-row { grid-template-columns: 1fr; }
+    .ijburg-hero-footer-grid { grid-template-columns: 1fr 1fr; }
     .ijburg-benefits { flex-direction: column; align-items: center; }
 }
+
+/* Form Labels */
+.ijburg-form-label {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.ijburg-form-label .required {
+    color: #E31E24;
+}
+
+/* Hero Footer */
+.ijburg-hero-footer {
+    background: linear-gradient(135deg, #021152 0%, #0d2060 100%);
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.ijburg-hero-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(227,30,36,0.1) 0%, transparent 60%);
+}
+.ijburg-hero-footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.ijburg-hero-footer h2 {
+    color: white;
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    line-height: 1.2;
+}
+.ijburg-hero-footer h2 span {
+    color: #E31E24;
+}
+.ijburg-hero-footer p {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+.ijburg-hero-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 35px;
+}
+.ijburg-hf-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+}
+.ijburg-hf-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+.ijburg-hf-text h4 {
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 3px;
+}
+.ijburg-hf-text p {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    margin: 0;
+}
+.ijburg-hero-footer-btn {
+    display: inline-block;
+    background: #E31E24;
+    color: white;
+    padding: 16px 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.1s;
+}
+.ijburg-hero-footer-btn:hover {
+    background: #c91a1f;
+    color: white;
+    text-decoration: none;
+}
+
 </style>
 
 <div class="ijburg-page">
@@ -446,19 +554,19 @@
     
     <div class="ijburg-countdown" id="ijburg-countdown">
         <div class="ijburg-countdown-item">
-            <div class="ijburg-countdown-number" id="ij-days">--</div>
+            <div class="ijburg-countdown-number" id="ij-days">&#8212;</div>
             <div class="ijburg-countdown-label">Dagen</div>
         </div>
         <div class="ijburg-countdown-item">
-            <div class="ijburg-countdown-number" id="ij-hours">--</div>
+            <div class="ijburg-countdown-number" id="ij-hours">&#8212;</div>
             <div class="ijburg-countdown-label">Uren</div>
         </div>
         <div class="ijburg-countdown-item">
-            <div class="ijburg-countdown-number" id="ij-mins">--</div>
+            <div class="ijburg-countdown-number" id="ij-mins">&#8212;</div>
             <div class="ijburg-countdown-label">Minuten</div>
         </div>
         <div class="ijburg-countdown-item">
-            <div class="ijburg-countdown-number" id="ij-secs">--</div>
+            <div class="ijburg-countdown-number" id="ij-secs">&#8212;</div>
             <div class="ijburg-countdown-label">Seconden</div>
         </div>
     </div>
@@ -480,7 +588,7 @@
         <div class="ijburg-info-card">
             <div class="ijburg-info-icon">⭐</div>
             <h3>Topmerken</h3>
-            <p>Alleen A-merken zoals Optimum Nutrition, Applied Nutrition, Ryse & meer.</p>
+            <p>Alleen A-merken zoals Optimum Nutrition, Applied Nutrition, Ryse &#038; meer.</p>
         </div>
     </div>
 </div>
@@ -526,27 +634,27 @@
         <div class="ijburg-cat-card">
             <div class="ijburg-cat-emoji">⚡</div>
             <h4>Pre-Workout</h4>
-            <p>Energie & Focus</p>
+            <p>Energie &#038; Focus</p>
         </div>
         <div class="ijburg-cat-card">
             <div class="ijburg-cat-emoji">🔥</div>
             <h4>Vetverbranders</h4>
-            <p>Afvallen & Snijden</p>
+            <p>Afvallen &#038; Snijden</p>
         </div>
         <div class="ijburg-cat-card">
             <div class="ijburg-cat-emoji">💊</div>
             <h4>Vitamines</h4>
-            <p>Gezondheid & Vitaliteit</p>
+            <p>Gezondheid &#038; Vitaliteit</p>
         </div>
         <div class="ijburg-cat-card">
             <div class="ijburg-cat-emoji">🥜</div>
             <h4>Gezonde Snacks</h4>
-            <p>Repen & Meer</p>
+            <p>Repen &#038; Meer</p>
         </div>
         <div class="ijburg-cat-card">
             <div class="ijburg-cat-emoji">🏋️</div>
             <h4>Creatine</h4>
-            <p>Kracht & Power</p>
+            <p>Kracht &#038; Power</p>
         </div>
         <div class="ijburg-cat-card">
             <div class="ijburg-cat-emoji">🥤</div>
@@ -556,13 +664,13 @@
         <div class="ijburg-cat-card">
             <div class="ijburg-cat-emoji">🎯</div>
             <h4>Accessoires</h4>
-            <p>Shakers & Gear</p>
+            <p>Shakers &#038; Gear</p>
         </div>
     </div>
 </div>
 
 <!-- Signup -->
-<div class="ijburg-signup">
+<div class="ijburg-signup" id="ijburg-aanmelden">
     <div style="font-size:48px;margin-bottom:15px;">🎁</div>
     <h2>ONTVANG <span>20% KORTING</span></h2>
     <h2 style="font-size:clamp(20px,3vw,32px);margin-top:0;">+ GRATIS GOODIEBAG</h2>
@@ -580,14 +688,22 @@
         <input type="hidden" name="_next" value="https://thehealthhouse.eu/ijburg/?success=1">
         <input type="hidden" name="_template" value="table">
         <div class="ijburg-form-row">
-            <input type="text" name="voornaam" placeholder="Voornaam" required>
-            <input type="text" name="achternaam" placeholder="Achternaam" required>
+            <div>
+                <label class="ijburg-form-label">Voornaam <span class="required">*</span></label>
+                <input type="text" name="voornaam" placeholder="Jouw voornaam" required>
+            </div>
+            <div>
+                <label class="ijburg-form-label">Achternaam <span class="required">*</span></label>
+                <input type="text" name="achternaam" placeholder="Jouw achternaam" required>
+            </div>
         </div>
         <div class="ijburg-form-full">
-            <input type="email" name="email" placeholder="E-mailadres" required>
+            <label class="ijburg-form-label">E-mailadres <span class="required">*</span></label>
+            <input type="email" name="email" placeholder="jouw@email.com" required>
         </div>
         <div class="ijburg-form-full">
-            <input type="tel" name="telefoon" placeholder="Telefoonnummer (optioneel)">
+            <label class="ijburg-form-label">Telefoonnummer</label>
+            <input type="tel" name="telefoon" placeholder="06 12345678 (optioneel)">
         </div>
         <button type="submit" class="ijburg-form-btn">MELD JE AAN — HET IS GRATIS!</button>
         <p class="ijburg-form-privacy">We respecteren je privacy. Je gegevens worden alleen gebruikt voor deze actie.</p>
@@ -608,6 +724,47 @@
         <a href="https://www.tiktok.com/@thehealthhouse.nl" target="_blank" class="ijburg-social-link" aria-label="TikTok">
             <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
         </a>
+    </div>
+</div>
+
+<!-- Hero Footer -->
+<div class="ijburg-hero-footer">
+    <div class="ijburg-hero-footer-inner">
+        <h2>KLAAR VOOR <span>THE HEALTH HOUSE</span> IJBURG?</h2>
+        <p>Wij openen binnenkort de deuren op IJburglaan 837 — jouw nieuwe one-stop supplementenwinkel in Amsterdam Oost.</p>
+        
+        <div class="ijburg-hero-footer-grid">
+            <div class="ijburg-hf-item">
+                <div class="ijburg-hf-icon">📍</div>
+                <div class="ijburg-hf-text">
+                    <h4>IJburglaan 837</h4>
+                    <p>Amsterdam IJburg</p>
+                </div>
+            </div>
+            <div class="ijburg-hf-item">
+                <div class="ijburg-hf-icon">📅</div>
+                <div class="ijburg-hf-text">
+                    <h4>10 - 15 Juli 2026</h4>
+                    <p>Grand Opening Week</p>
+                </div>
+            </div>
+            <div class="ijburg-hf-item">
+                <div class="ijburg-hf-icon">🏋️</div>
+                <div class="ijburg-hf-text">
+                    <h4>600+ Producten</h4>
+                    <p>Alle topmerken onder één dak</p>
+                </div>
+            </div>
+            <div class="ijburg-hf-item">
+                <div class="ijburg-hf-icon">🎁</div>
+                <div class="ijburg-hf-text">
+                    <h4>Opening Deals</h4>
+                    <p>20% korting + gratis goodiebag</p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#ijburg-aanmelden" class="ijburg-hero-footer-btn">MELD JE NU AAN</a>
     </div>
 </div>
 
@@ -635,4 +792,4 @@
     setInterval(update, 1000);
 })();
 </script>
-<!-- /wp:html -->
+
