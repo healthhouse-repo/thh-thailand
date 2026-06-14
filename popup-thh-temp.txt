@@ -1,0 +1,455 @@
+// 10% Welkomstkorting Popup — ESN-style split design for THH EU
+// Shows once per visitor (localStorage). Saves email + phone to DB via AJAX.
+
+// AJAX handler for newsletter signup
+add_action('wp_ajax_thh_popup_signup', 'thh_popup_signup_handler');
+add_action('wp_ajax_nopriv_thh_popup_signup', 'thh_popup_signup_handler');
+function thh_popup_signup_handler() {
+    $email = sanitize_email($_POST['email'] ?? '');
+    $phone = sanitize_text_field($_POST['phone'] ?? '');
+    if (!$email || !is_email($email)) {
+        wp_send_json_error('Ongeldig e-mailadres');
+    }
+    global $wpdb;
+    $table = $wpdb->prefix . 'thh_newsletter';
+    // Create table if not exists
+    $wpdb->query("CREATE TABLE IF NOT EXISTS {$table} (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        email VARCHAR(255) NOT NULL,
+        phone VARCHAR(50) DEFAULT '',
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE KEY unique_email (email)
+    )");
+    $result = $wpdb->replace($table, [
+        'email' => $email,
+        'phone' => $phone,
+        'created_at' => current_time('mysql')
+    ]);
+    if ($result !== false) {
+        wp_send_json_success('Aangemeld!');
+    } else {
+        wp_send_json_error('Fout bij opslaan');
+    }
+}
+
+// Frontend popup
+add_action('wp_footer', function() {
+    if (is_admin()) return;
+    ?>
+    <style>
+    /* THH Popup Overlay */
+    .thh-popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 999999;
+        justify-content: center;
+        align-items: center;
+        animation: thhFadeIn 0.3s ease;
+    }
+    .thh-popup-overlay.thh-popup-active {
+        display: flex;
+    }
+    @keyframes thhFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes thhSlideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Popup Container */
+    .thh-popup-container {
+        display: flex;
+        width: 780px;
+        max-width: 95vw;
+        max-height: 90vh;
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        animation: thhSlideUp 0.4s ease;
+        position: relative;
+    }
+
+    /* Left: Image */
+    .thh-popup-image {
+        flex: 0 0 45%;
+        background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=800&fit=crop&crop=center') center center / cover no-repeat;
+        position: relative;
+        min-height: 420px;
+    }
+    .thh-popup-image::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 40%;
+        background: linear-gradient(to top, rgba(27,42,74,0.4), transparent);
+    }
+
+    /* Right: Form */
+    .thh-popup-form-side {
+        flex: 1;
+        padding: 48px 40px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    /* Close Button */
+    .thh-popup-close {
+        position: absolute;
+        top: 16px; right: 16px;
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        background: transparent;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        transition: all 0.2s;
+        line-height: 1;
+        z-index: 2;
+    }
+    .thh-popup-close:hover {
+        border-color: #1B2A4A;
+        color: #1B2A4A;
+        background: #f5f5f5;
+    }
+
+    /* Typography */
+    .thh-popup-form-side h2 {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 28px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        color: #1B2A4A !important;
+        margin: 0 0 12px 0 !important;
+        padding: 0 !important;
+        letter-spacing: -0.5px;
+    }
+    .thh-popup-form-side h2 span {
+        color: #D4213D;
+    }
+    .thh-popup-subtitle {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: #555 !important;
+        margin: 0 0 28px 0 !important;
+    }
+
+    /* Labels */
+    .thh-popup-label {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: #1B2A4A !important;
+        margin: 0 0 6px 0 !important;
+        display: block !important;
+    }
+
+    /* Input Fields */
+    .thh-popup-input {
+        width: 100% !important;
+        padding: 14px 16px !important;
+        border: 1.5px solid #ddd !important;
+        border-radius: 10px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14px !important;
+        color: #333 !important;
+        background: #fff !important;
+        outline: none !important;
+        transition: border-color 0.2s !important;
+        box-sizing: border-box !important;
+        margin: 0 0 16px 0 !important;
+    }
+    .thh-popup-input:focus {
+        border-color: #1B2A4A !important;
+    }
+    .thh-popup-input::placeholder {
+        color: #aaa !important;
+    }
+
+    /* Phone Field Group */
+    .thh-popup-phone-group {
+        display: flex;
+        align-items: center;
+        border: 1.5px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 0 20px 0;
+        transition: border-color 0.2s;
+    }
+    .thh-popup-phone-group:focus-within {
+        border-color: #1B2A4A;
+    }
+    .thh-popup-phone-prefix {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 14px 12px;
+        background: #f9f9f9;
+        border-right: 1.5px solid #ddd;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        color: #333;
+        white-space: nowrap;
+    }
+    .thh-popup-phone-prefix img {
+        width: 22px;
+        height: 15px;
+        border-radius: 2px;
+    }
+    .thh-popup-phone-input {
+        flex: 1;
+        padding: 14px 12px !important;
+        border: none !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14px !important;
+        color: #333 !important;
+        outline: none !important;
+        background: transparent !important;
+        margin: 0 !important;
+    }
+    .thh-popup-phone-input::placeholder {
+        color: #aaa !important;
+    }
+
+    /* Submit Button */
+    .thh-popup-submit {
+        width: 100%;
+        padding: 15px 24px;
+        background: #1B2A4A !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 10px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.5px !important;
+        cursor: pointer;
+        transition: all 0.3s !important;
+        text-transform: uppercase;
+        margin: 0 0 16px 0;
+    }
+    .thh-popup-submit:hover {
+        background: #D4213D !important;
+        transform: translateY(-1px);
+    }
+
+    /* Disclaimer */
+    .thh-popup-disclaimer {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 11px !important;
+        color: #999 !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+    .thh-popup-disclaimer a {
+        color: #1B2A4A !important;
+        text-decoration: underline !important;
+    }
+
+    /* Success State */
+    .thh-popup-success {
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+    }
+    .thh-popup-success .thh-popup-check {
+        width: 64px;
+        height: 64px;
+        background: #1B2A4A;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 28px;
+        color: #fff;
+    }
+    .thh-popup-success h3 {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        color: #1B2A4A !important;
+        margin: 0 0 8px 0 !important;
+    }
+    .thh-popup-success p {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 14px !important;
+        color: #555 !important;
+        margin: 0 0 12px 0 !important;
+    }
+    .thh-popup-code {
+        display: inline-block;
+        background: #f0f4f8;
+        color: #1B2A4A;
+        font-family: 'Poppins', monospace !important;
+        font-size: 24px !important;
+        font-weight: 800 !important;
+        padding: 12px 28px;
+        border-radius: 10px;
+        letter-spacing: 3px;
+        border: 2px dashed #1B2A4A;
+        margin: 8px 0 12px;
+    }
+    .thh-popup-success .thh-popup-small {
+        font-size: 12px !important;
+        color: #888 !important;
+    }
+
+    /* Error */
+    .thh-popup-error {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 12px !important;
+        color: #D4213D !important;
+        margin: -10px 0 10px 0 !important;
+        display: none;
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+        .thh-popup-container {
+            flex-direction: column;
+            max-height: 92vh;
+            width: 92vw;
+            border-radius: 14px;
+        }
+        .thh-popup-image {
+            flex: 0 0 180px;
+            min-height: 180px;
+        }
+        .thh-popup-form-side {
+            padding: 28px 24px 24px;
+        }
+        .thh-popup-form-side h2 {
+            font-size: 22px !important;
+        }
+        .thh-popup-subtitle {
+            font-size: 13px !important;
+            margin-bottom: 20px !important;
+        }
+    }
+    </style>
+
+    <div class="thh-popup-overlay" id="thhPopupOverlay">
+        <div class="thh-popup-container">
+            <div class="thh-popup-image"></div>
+            <div class="thh-popup-form-side">
+                <button class="thh-popup-close" id="thhPopupClose" aria-label="Sluiten">&times;</button>
+
+                <div id="thhPopupForm">
+                    <h2>Ontvang <span>10% korting</span> op je eerste bestelling</h2>
+                    <p class="thh-popup-subtitle">Schrijf je in voor de The Health House nieuwsbrief en ontvang exclusieve aanbiedingen, tips en updates in je mailbox.</p>
+
+                    <label class="thh-popup-label">E-mail *</label>
+                    <input type="email" class="thh-popup-input" id="thhPopupEmail" placeholder="naam@voorbeeld.nl" required>
+                    <div class="thh-popup-error" id="thhPopupError">Vul een geldig e-mailadres in</div>
+
+                    <label class="thh-popup-label">Telefoon (optioneel)</label>
+                    <div class="thh-popup-phone-group">
+                        <div class="thh-popup-phone-prefix">
+                            <img src="https://flagcdn.com/w40/nl.png" alt="NL"> ▾ +31
+                        </div>
+                        <input type="tel" class="thh-popup-phone-input" id="thhPopupPhone" placeholder="6 12345678">
+                    </div>
+
+                    <button class="thh-popup-submit" id="thhPopupSubmit">ONTVANG 10% KORTING</button>
+
+                    <p class="thh-popup-disclaimer">Door je aan te melden ga je akkoord met onze <a href="/privacybeleid/">privacyverklaring</a>. Je kunt je op elk moment uitschrijven.</p>
+                </div>
+
+                <div class="thh-popup-success" id="thhPopupSuccess">
+                    <div class="thh-popup-check">&#10003;</div>
+                    <h3>Gelukt!</h3>
+                    <p>Je kortingscode is:</p>
+                    <div class="thh-popup-code">WELKOM10</div>
+                    <p class="thh-popup-small">Gebruik deze code bij het afrekenen voor 10% korting op je eerste bestelling.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        if (localStorage.getItem('thh_popup_shown')) return;
+
+        var overlay = document.getElementById('thhPopupOverlay');
+        var closeBtn = document.getElementById('thhPopupClose');
+        var submitBtn = document.getElementById('thhPopupSubmit');
+        var emailInput = document.getElementById('thhPopupEmail');
+        var phoneInput = document.getElementById('thhPopupPhone');
+        var errorDiv = document.getElementById('thhPopupError');
+        var formDiv = document.getElementById('thhPopupForm');
+        var successDiv = document.getElementById('thhPopupSuccess');
+
+        // Show after 4 seconds
+        setTimeout(function() {
+            overlay.classList.add('thh-popup-active');
+        }, 4000);
+
+        function closePopup() {
+            overlay.classList.remove('thh-popup-active');
+            localStorage.setItem('thh_popup_shown', '1');
+        }
+
+        closeBtn.addEventListener('click', closePopup);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closePopup();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePopup();
+        });
+
+        submitBtn.addEventListener('click', function() {
+            var email = emailInput.value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errorDiv.style.display = 'block';
+                emailInput.style.borderColor = '#D4213D';
+                return;
+            }
+            errorDiv.style.display = 'none';
+            emailInput.style.borderColor = '#ddd';
+            submitBtn.textContent = 'EVEN GEDULD...';
+            submitBtn.disabled = true;
+
+            var phone = phoneInput.value.trim();
+            if (phone) phone = '+31' + phone;
+
+            var formData = new FormData();
+            formData.append('action', 'thh_popup_signup');
+            formData.append('email', email);
+            formData.append('phone', phone);
+
+            fetch('<?php echo admin_url("admin-ajax.php"); ?>', {
+                method: 'POST',
+                body: formData
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                formDiv.style.display = 'none';
+                successDiv.style.display = 'block';
+                localStorage.setItem('thh_popup_shown', '1');
+            })
+            .catch(function() {
+                formDiv.style.display = 'none';
+                successDiv.style.display = 'block';
+                localStorage.setItem('thh_popup_shown', '1');
+            });
+        });
+
+        emailInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') submitBtn.click();
+        });
+    })();
+    </script>
+    <?php
+});
