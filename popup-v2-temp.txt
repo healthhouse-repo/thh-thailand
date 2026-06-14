@@ -1,0 +1,281 @@
+// 10% Welkomstkorting Popup — ESN-style split design (shows once per visitor)
+add_action('wp_footer', function() {
+    if (is_admin()) return;
+    ?>
+    <div id="sh-welcome-popup" style="display:none;">
+        <div class="sh-popup-overlay"></div>
+        <div class="sh-popup-modal">
+            <button class="sh-popup-close" aria-label="Sluiten">&times;</button>
+            <div class="sh-popup-image"></div>
+            <div class="sh-popup-content">
+                <h2 class="sh-popup-title">Ontvang 10% korting op je eerste bestelling</h2>
+                <p class="sh-popup-text">Schrijf je in voor de SuppHub nieuwsbrief en ontvang exclusieve aanbiedingen en updates in je mailbox.</p>
+                <form class="sh-popup-form" id="sh-popup-form">
+                    <div class="sh-form-group">
+                        <label class="sh-form-label">E-mail <span class="sh-required">*</span></label>
+                        <input type="email" name="email" placeholder="name@gmail.com" required class="sh-popup-input" />
+                    </div>
+                    <div class="sh-form-group">
+                        <label class="sh-form-label">Telefoon (optioneel)</label>
+                        <div class="sh-phone-wrapper">
+                            <div class="sh-phone-prefix">
+                                <img src="https://flagcdn.com/w40/nl.png" width="24" height="16" alt="NL" class="sh-flag-img" />
+                                <span class="sh-prefix-arrow">&#9662;</span>
+                                <span class="sh-prefix-text">+31</span>
+                            </div>
+                            <input type="tel" name="phone" placeholder="6 12345678" class="sh-popup-input sh-phone-input" />
+                        </div>
+                    </div>
+                    <button type="submit" class="sh-popup-btn">ONTVANG 10% KORTING</button>
+                </form>
+                <div class="sh-popup-success" style="display:none;">
+                    <div class="sh-popup-check">&#10003;</div>
+                    <h3>Gelukt!</h3>
+                    <p>Je kortingscode is:</p>
+                    <div class="sh-popup-code">WELKOM10</div>
+                    <p class="sh-popup-small">Gebruik deze code bij het afrekenen voor 10% korting.</p>
+                </div>
+                <p class="sh-popup-disclaimer">Door je aan te melden, ga je akkoord met het ontvangen van marketing-e-mails van SuppHub. Afmelden kan op elk moment. <a href="/privacy-policy/" class="sh-disclaimer-link">Privacybeleid</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    #sh-welcome-popup .sh-popup-overlay {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+        z-index: 99998;
+    }
+    #sh-welcome-popup .sh-popup-modal {
+        position: fixed; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex; overflow: hidden;
+        max-width: 780px; width: 92%;
+        max-height: 90vh;
+        background: #fff; border-radius: 12px;
+        z-index: 99999;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        animation: shPopupSlide 0.4s ease;
+    }
+    @keyframes shPopupSlide {
+        from { opacity: 0; transform: translate(-50%, -48%); }
+        to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+    #sh-welcome-popup .sh-popup-image {
+        width: 45%; min-height: 520px;
+        background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=800&fit=crop&q=80') center/cover no-repeat;
+        background-color: #1a1a2e;
+        flex-shrink: 0;
+    }
+    #sh-welcome-popup .sh-popup-content {
+        flex: 1; padding: 48px 40px 36px;
+        display: flex; flex-direction: column;
+        justify-content: center;
+    }
+    #sh-welcome-popup .sh-popup-close {
+        position: absolute; top: 14px; right: 18px;
+        background: none; border: none;
+        font-size: 30px; color: #666; cursor: pointer;
+        z-index: 10; line-height: 1; padding: 4px 8px;
+        transition: color 0.2s;
+    }
+    #sh-welcome-popup .sh-popup-close:hover { color: #111; }
+    #sh-welcome-popup .sh-popup-title {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 26px !important; font-weight: 700 !important;
+        color: #111 !important; line-height: 1.25 !important;
+        margin: 0 0 14px !important; letter-spacing: -0.3px;
+        text-transform: none !important;
+    }
+    #sh-welcome-popup .sh-popup-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px; color: #555;
+        line-height: 1.6; margin: 0 0 28px;
+    }
+    #sh-welcome-popup .sh-popup-form {
+        display: flex; flex-direction: column; gap: 18px;
+    }
+    #sh-welcome-popup .sh-form-group {
+        display: flex; flex-direction: column; gap: 6px;
+    }
+    #sh-welcome-popup .sh-form-label {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px; font-weight: 500;
+        color: #222;
+    }
+    #sh-welcome-popup .sh-required { color: #222; }
+    #sh-welcome-popup .sh-popup-input {
+        width: 100%; padding: 14px 16px;
+        border: 1px solid #ddd; border-radius: 6px;
+        font-family: 'Poppins', sans-serif; font-size: 15px;
+        color: #333; outline: none;
+        transition: border-color 0.2s;
+        box-sizing: border-box; background: #fff;
+    }
+    #sh-welcome-popup .sh-popup-input::placeholder { color: #aaa; }
+    #sh-welcome-popup .sh-popup-input:focus { border-color: #111; }
+    #sh-welcome-popup .sh-phone-wrapper {
+        display: flex; align-items: stretch;
+        border: 1px solid #ddd; border-radius: 6px;
+        overflow: hidden; transition: border-color 0.2s;
+        background: #fff;
+    }
+    #sh-welcome-popup .sh-phone-wrapper:focus-within { border-color: #111; }
+    #sh-welcome-popup .sh-phone-prefix {
+        display: flex; align-items: center; gap: 6px;
+        padding: 0 14px; background: #fff;
+        border-right: 1px solid #ddd;
+        cursor: default; white-space: nowrap;
+        font-family: 'Poppins', sans-serif; font-size: 14px; color: #333;
+    }
+    #sh-welcome-popup .sh-flag-img { display: block; border-radius: 2px; }
+    #sh-welcome-popup .sh-prefix-arrow { font-size: 10px; color: #999; margin-left: -2px; }
+    #sh-welcome-popup .sh-prefix-text { font-size: 15px; color: #333; }
+    #sh-welcome-popup .sh-phone-input {
+        border: none !important; border-radius: 0 !important;
+        flex: 1; min-width: 0;
+    }
+    #sh-welcome-popup .sh-phone-input:focus { border: none !important; box-shadow: none !important; }
+    #sh-welcome-popup .sh-popup-btn {
+        width: 100%; padding: 16px;
+        background: #111; color: #fff; border: none;
+        border-radius: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px; font-weight: 600;
+        letter-spacing: 0.5px;
+        cursor: pointer; transition: background 0.3s;
+        margin-top: 4px;
+    }
+    #sh-welcome-popup .sh-popup-btn:hover { background: #333; }
+    #sh-welcome-popup .sh-popup-success { text-align: center; }
+    #sh-welcome-popup .sh-popup-success .sh-popup-check {
+        width: 56px; height: 56px; border-radius: 50%;
+        background: #22c55e; color: #fff;
+        font-size: 28px; line-height: 56px;
+        margin: 0 auto 14px; text-align: center;
+    }
+    #sh-welcome-popup .sh-popup-success h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 22px; font-weight: 700;
+        color: #111; margin: 0 0 6px;
+    }
+    #sh-welcome-popup .sh-popup-success p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px; color: #666; margin: 4px 0;
+    }
+    #sh-welcome-popup .sh-popup-code {
+        display: inline-block;
+        background: #111; color: #3B60FF;
+        font-family: 'Space Mono', monospace;
+        font-size: 22px; font-weight: 700;
+        padding: 10px 28px; border-radius: 8px;
+        letter-spacing: 3px; margin: 12px 0;
+        user-select: all;
+    }
+    #sh-welcome-popup .sh-popup-small { font-size: 12px !important; color: #999 !important; }
+    #sh-welcome-popup .sh-popup-disclaimer {
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px; color: #999;
+        margin-top: 24px; line-height: 1.5;
+    }
+    #sh-welcome-popup .sh-disclaimer-link { color: #666; text-decoration: underline; }
+    @media (max-width: 640px) {
+        #sh-welcome-popup .sh-popup-modal {
+            flex-direction: column;
+            width: 95%; max-height: 95vh;
+            overflow-y: auto;
+        }
+        #sh-welcome-popup .sh-popup-image {
+            width: 100%; min-height: 180px; height: 180px;
+        }
+        #sh-welcome-popup .sh-popup-content { padding: 28px 24px 24px; }
+        #sh-welcome-popup .sh-popup-title { font-size: 22px !important; }
+        #sh-welcome-popup .sh-popup-text { font-size: 13px; margin-bottom: 20px; }
+    }
+    </style>
+
+    <script>
+    (function() {
+        var STORAGE_KEY = 'sh_popup_shown';
+        var DELAY_MS = 4000;
+        if (localStorage.getItem(STORAGE_KEY)) return;
+        setTimeout(function() {
+            var popup = document.getElementById('sh-welcome-popup');
+            if (!popup) return;
+            popup.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }, DELAY_MS);
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('sh-popup-overlay') ||
+                e.target.classList.contains('sh-popup-close')) {
+                closePopup();
+            }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePopup();
+        });
+        function closePopup() {
+            var popup = document.getElementById('sh-welcome-popup');
+            if (popup) {
+                popup.style.display = 'none';
+                document.body.style.overflow = '';
+                localStorage.setItem(STORAGE_KEY, '1');
+            }
+        }
+        document.addEventListener('submit', function(e) {
+            if (e.target.id !== 'sh-popup-form') return;
+            e.preventDefault();
+            var email = e.target.querySelector('input[name="email"]').value;
+            var phone = e.target.querySelector('input[name="phone"]').value;
+            if (!email) return;
+            var fd = new FormData();
+            fd.append('action', 'sh_newsletter_signup');
+            fd.append('email', email);
+            if (phone) fd.append('phone', '+31' + phone);
+            fetch('/wp-admin/admin-ajax.php', { method: 'POST', body: fd });
+            e.target.style.display = 'none';
+            var content = e.target.closest('.sh-popup-content');
+            var success = content.querySelector('.sh-popup-success');
+            if (success) success.style.display = 'block';
+            var disc = content.querySelector('.sh-popup-disclaimer');
+            if (disc) disc.style.display = 'none';
+            localStorage.setItem(STORAGE_KEY, '1');
+            setTimeout(closePopup, 8000);
+        });
+    })();
+    </script>
+    <?php
+});
+
+// === NEWSLETTER SIGNUP HANDLER ===
+add_action('wp_ajax_sh_newsletter_signup', 'sh_handle_newsletter');
+add_action('wp_ajax_nopriv_sh_newsletter_signup', 'sh_handle_newsletter');
+function sh_handle_newsletter() {
+    $email = sanitize_email($_POST['email'] ?? '');
+    if (!is_email($email)) {
+        wp_send_json_error(['message' => 'Ongeldig e-mailadres']);
+    }
+    $phone = sanitize_text_field($_POST['phone'] ?? '');
+    $signups = get_option('sh_newsletter_signups', []);
+    if (!in_array($email, $signups)) {
+        $signups[] = $email;
+        update_option('sh_newsletter_signups', $signups);
+    }
+    $log = get_option('sh_newsletter_log', []);
+    $log[] = ['email' => $email, 'phone' => $phone, 'date' => current_time('mysql'), 'source' => 'popup'];
+    update_option('sh_newsletter_log', $log);
+    wp_send_json_success(['message' => 'Bedankt voor je aanmelding!']);
+}
+
+// REST endpoint
+add_action('rest_api_init', function() {
+    register_rest_route('sh/v1', '/newsletter', [
+        'methods' => 'GET',
+        'callback' => function() {
+            return rest_ensure_response(get_option('sh_newsletter_log', []));
+        },
+        'permission_callback' => function() {
+            return current_user_can('manage_options');
+        }
+    ]);
+});
