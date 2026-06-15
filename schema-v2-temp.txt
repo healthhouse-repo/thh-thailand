@@ -1,0 +1,343 @@
+/**
+ * Schema Markup - AI & SEO Optimization
+ * Structured data for Organization, LocalBusiness (per location), FAQ
+ * Helps AI systems (ChatGPT, Perplexity, Google AI) discover The Health House
+ * Updated: Kerkstraat & Postjesweg marked as temporarilyClosed
+ */
+
+add_action('wp_head', function() {
+
+    // 1) Organization
+    $org = [
+        "@context" => "https://schema.org",
+        "@type" => "Organization",
+        "@id" => "https://thehealthhouse.eu/#organization",
+        "name" => "The Health House",
+        "alternateName" => ["THH", "The Health House Nederland"],
+        "url" => "https://thehealthhouse.eu",
+        "logo" => [
+            "@type" => "ImageObject",
+            "url" => "https://thehealthhouse.eu/wp-content/uploads/2022/11/Logo.svg",
+        ],
+        "description" => "The Health House is een premium supplementenwinkel in Nederland, gespecialiseerd in sportvoeding, verse eiwitshakes, vitamines, creatine, pre-workout, aminozuren en gezonde snacks. Met fysieke winkels door heel Nederland bieden wij persoonlijk advies en topmerken voor atleten, sporters en gezondheidsbewuste mensen.",
+        "foundingDate" => "2022",
+        "areaServed" => [
+            ["@type" => "Country", "name" => "Netherlands"],
+            ["@type" => "City", "name" => "Amsterdam"],
+            ["@type" => "City", "name" => "Uithoorn"],
+            ["@type" => "City", "name" => "Hilversum"],
+            ["@type" => "City", "name" => "Alkmaar"],
+            ["@type" => "City", "name" => "Hoofddorp"],
+            ["@type" => "City", "name" => "Heerhugowaard"],
+            ["@type" => "City", "name" => "Apeldoorn"],
+        ],
+        "knowsAbout" => [
+            "Sportvoeding", "Supplementen", "Eiwitshakes", "Proteïne", "Creatine",
+            "Pre-workout", "Aminozuren", "Vitamines", "Vetverbranders",
+            "Gezonde snacks", "Fitness supplementen", "Bodybuilding supplementen"
+        ],
+        "sameAs" => [
+            "https://www.instagram.com/thehealthhouse.nl/",
+            "https://www.tiktok.com/@thehealthhouse.nl",
+            "https://www.facebook.com/thehealthhousenl"
+        ],
+        "contactPoint" => [
+            [
+                "@type" => "ContactPoint",
+                "contactType" => "customer service",
+                "email" => "info@thehealthhouse.nl",
+                "availableLanguage" => ["Dutch", "English"],
+            ],
+        ],
+    ];
+
+    // Helper: standard offer catalog
+    $offerCatalog = [
+        "@type" => "OfferCatalog",
+        "name" => "Supplementen & Sportvoeding",
+        "itemListElement" => [
+            ["@type" => "OfferCatalog", "name" => "Proteïne & Whey"],
+            ["@type" => "OfferCatalog", "name" => "Creatine"],
+            ["@type" => "OfferCatalog", "name" => "Pre Workout"],
+            ["@type" => "OfferCatalog", "name" => "Aminozuren & BCAA"],
+            ["@type" => "OfferCatalog", "name" => "Vitamines & Mineralen"],
+            ["@type" => "OfferCatalog", "name" => "Vetverbranders"],
+            ["@type" => "OfferCatalog", "name" => "Gezonde Snacks"],
+            ["@type" => "OfferCatalog", "name" => "Fitness Accessoires"],
+            ["@type" => "OfferCatalog", "name" => "Verse Eiwitshakes"],
+        ],
+    ];
+
+    // Helper: standard business properties
+    $baseBusiness = [
+        "image" => "https://thehealthhouse.eu/wp-content/uploads/2022/11/Logo.svg",
+        "url" => "https://thehealthhouse.eu",
+        "parentOrganization" => ["@id" => "https://thehealthhouse.eu/#organization"],
+        "priceRange" => "€€",
+        "currenciesAccepted" => "EUR",
+        "paymentAccepted" => "Cash, Credit Card, Debit Card, PIN",
+    ];
+
+    // 2) Uithoorn (Team Champ) — OPEN
+    $uithoorn = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#uithoorn",
+        "name" => "The Health House Uithoorn",
+        "description" => "Premium supplementenwinkel in Uithoorn bij Team Champ. Sportvoeding, verse shakes, vitamines, creatine, pre-workout en persoonlijk advies.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Wiegerbruinlaan 81A",
+            "addressLocality" => "Uithoorn",
+            "postalCode" => "1422 AC",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.2358, "longitude" => 4.8289],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 3) Amsterdam IJburg — OPEN (opening 10-15 juli 2026)
+    $ijburg = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#ijburg",
+        "name" => "The Health House Amsterdam IJburg",
+        "description" => "Premium supplementenwinkel in Amsterdam IJburg. Sportvoeding, verse shakes, vitamines, creatine, pre-workout, gezonde snacks en persoonlijk advies.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "IJburglaan 837",
+            "addressLocality" => "Amsterdam",
+            "postalCode" => "1087 EM",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.3545, "longitude" => 4.9629],
+        "openingHoursSpecification" => [
+            ["@type" => "OpeningHoursSpecification", "dayOfWeek" => ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens" => "10:00", "closes" => "18:00"],
+            ["@type" => "OpeningHoursSpecification", "dayOfWeek" => "Sunday", "opens" => "12:00", "closes" => "18:00"],
+        ],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 4) Amsterdam Osdorpplein — OPEN
+    $osdorp = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#osdorp",
+        "name" => "The Health House Amsterdam Osdorp",
+        "description" => "Premium supplementenwinkel in Amsterdam Osdorp. Sportvoeding, verse shakes, vitamines, creatine, pre-workout en persoonlijk advies.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Osdorpplein",
+            "addressLocality" => "Amsterdam",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.3597, "longitude" => 4.8084],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 5) Alkmaar — OPEN
+    $alkmaar = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#alkmaar",
+        "name" => "The Health House Alkmaar",
+        "description" => "Premium supplementenwinkel in Alkmaar. Sportvoeding, verse shakes, vitamines, creatine, pre-workout en persoonlijk advies.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Laat 151",
+            "addressLocality" => "Alkmaar",
+            "postalCode" => "1811 EE",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.6324, "longitude" => 4.7534],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 6) Apeldoorn — OPEN
+    $apeldoorn = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#apeldoorn",
+        "name" => "The Health House Apeldoorn",
+        "description" => "Premium supplementenwinkel in Apeldoorn. Sportvoeding, verse shakes, vitamines, creatine, pre-workout en persoonlijk advies.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Deventerstraat",
+            "addressLocality" => "Apeldoorn",
+            "addressRegion" => "Gelderland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.2112, "longitude" => 5.9699],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 7) Hoofddorp — OPEN
+    $hoofddorp = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#hoofddorp",
+        "name" => "The Health House Hoofddorp",
+        "description" => "Premium supplementenwinkel in Hoofddorp. Sportvoeding, verse shakes, vitamines, creatine, pre-workout en persoonlijk advies.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Polderplein 223",
+            "addressLocality" => "Hoofddorp",
+            "postalCode" => "2132 BG",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.3026, "longitude" => 4.6889],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 8) Heerhugowaard — OPEN
+    $heerhugowaard = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#heerhugowaard",
+        "name" => "The Health House Heerhugowaard",
+        "description" => "Premium supplementenwinkel in Heerhugowaard. Sportvoeding, verse shakes, vitamines, creatine, pre-workout en persoonlijk advies.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Middenwaard 4c",
+            "addressLocality" => "Heerhugowaard",
+            "postalCode" => "1703 XB",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.6637, "longitude" => 4.8310],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 9) Hilversum Kerkstraat — TIJDELIJK GESLOTEN
+    $hilversum = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#hilversum",
+        "name" => "The Health House Hilversum (Tijdelijk Gesloten)",
+        "description" => "Supplementenwinkel in Hilversum. Momenteel tijdelijk gesloten. Bezoek een van onze andere vestigingen.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Kerkstraat 36",
+            "addressLocality" => "Hilversum",
+            "postalCode" => "1211 CR",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.2234, "longitude" => 5.1764],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 10) Amsterdam Postjesweg — TIJDELIJK GESLOTEN
+    $postjesweg = array_merge($baseBusiness, [
+        "@context" => "https://schema.org",
+        "@type" => "HealthFoodStore",
+        "@id" => "https://thehealthhouse.eu/#postjesweg",
+        "name" => "The Health House Amsterdam Postjesweg (Tijdelijk Gesloten)",
+        "description" => "Supplementenwinkel in Amsterdam West. Momenteel tijdelijk gesloten. Bezoek een van onze andere vestigingen.",
+        "address" => [
+            "@type" => "PostalAddress",
+            "streetAddress" => "Postjesweg 84",
+            "addressLocality" => "Amsterdam",
+            "postalCode" => "1057 EE",
+            "addressRegion" => "Noord-Holland",
+            "addressCountry" => "NL",
+        ],
+        "geo" => ["@type" => "GeoCoordinates", "latitude" => 52.3672, "longitude" => 4.8508],
+        "hasOfferCatalog" => $offerCatalog,
+    ]);
+
+    // 11) WebSite with SearchAction
+    $website = [
+        "@context" => "https://schema.org",
+        "@type" => "WebSite",
+        "@id" => "https://thehealthhouse.eu/#website",
+        "name" => "The Health House",
+        "url" => "https://thehealthhouse.eu",
+        "description" => "Online shop en informatie over The Health House - premium supplementenwinkel in Nederland met 8 vestigingen.",
+        "publisher" => ["@id" => "https://thehealthhouse.eu/#organization"],
+        "inLanguage" => "nl-NL",
+        "potentialAction" => [
+            [
+                "@type" => "SearchAction",
+                "target" => "https://thehealthhouse.eu/?s={search_term_string}",
+                "query-input" => "required name=search_term_string",
+            ],
+        ],
+    ];
+
+    // 12) FAQ Page (alleen op homepage)
+    $faq = [
+        "@context" => "https://schema.org",
+        "@type" => "FAQPage",
+        "@id" => "https://thehealthhouse.eu/#faq",
+        "mainEntity" => [
+            [
+                "@type" => "Question",
+                "name" => "Wat is The Health House?",
+                "acceptedAnswer" => [
+                    "@type" => "Answer",
+                    "text" => "The Health House is een premium supplementenwinkel in Nederland, gespecialiseerd in sportvoeding, verse eiwitshakes, vitamines, creatine, pre-workout, aminozuren en gezonde snacks. Met fysieke winkels door heel Nederland bieden wij persoonlijk advies en topmerken voor atleten, sporters en gezondheidsbewuste mensen.",
+                ],
+            ],
+            [
+                "@type" => "Question",
+                "name" => "Waar kan ik supplementen kopen?",
+                "acceptedAnswer" => [
+                    "@type" => "Answer",
+                    "text" => "The Health House heeft vestigingen in Uithoorn (Team Champ), Amsterdam IJburg, Amsterdam Osdorp, Alkmaar, Hoofddorp, Heerhugowaard en Apeldoorn. Daarnaast kun je online bestellen via thehealthhouse.eu met gratis verzending boven €50.",
+                ],
+            ],
+            [
+                "@type" => "Question",
+                "name" => "Welke vestigingen zijn tijdelijk gesloten?",
+                "acceptedAnswer" => [
+                    "@type" => "Answer",
+                    "text" => "De vestigingen in Hilversum (Kerkstraat 36) en Amsterdam Postjesweg (Postjesweg 84) zijn momenteel tijdelijk gesloten. Bezoek een van onze andere vestigingen of bestel online via thehealthhouse.eu.",
+                ],
+            ],
+            [
+                "@type" => "Question",
+                "name" => "Heeft The Health House verse shakes?",
+                "acceptedAnswer" => [
+                    "@type" => "Answer",
+                    "text" => "Ja! The Health House heeft een shake bar waar dagelijks verse eiwitshakes worden gemaakt met echte ingrediënten. De shakes zijn hoog in eiwit en worden ter plekke bereid met vers fruit en premium eiwitpoeders.",
+                ],
+            ],
+            [
+                "@type" => "Question",
+                "name" => "Welke merken verkoopt The Health House?",
+                "acceptedAnswer" => [
+                    "@type" => "Answer",
+                    "text" => "The Health House verkoopt premium merken zoals Optimum Nutrition (Gold Standard Whey), Ghost (Legend Pre-Workout), Cellucor (C4), XXL Nutrition (Venom), Applied Nutrition, Insane Labz, Barebells, en vele andere topmerken in sportvoeding, supplementen en gezonde snacks.",
+                ],
+            ],
+            [
+                "@type" => "Question",
+                "name" => "Kan ik online bestellen bij The Health House?",
+                "acceptedAnswer" => [
+                    "@type" => "Answer",
+                    "text" => "Ja, je kunt online bestellen via de webshop op thehealthhouse.eu. Gratis verzending boven 50 euro in Nederland. Je kunt producten ook afhalen in een van onze winkels. Betalen kan met iDEAL, creditcard, Apple Pay en meer.",
+                ],
+            ],
+        ],
+    ];
+
+    // Output alle schema's
+    $schemas = [$org, $uithoorn, $ijburg, $osdorp, $alkmaar, $apeldoorn, $hoofddorp, $heerhugowaard, $hilversum, $postjesweg, $website];
+    
+    // FAQ alleen op homepage
+    if (is_front_page() || is_home()) {
+        $schemas[] = $faq;
+    }
+
+    foreach ($schemas as $schema) {
+        echo '<script type="application/ld+json">' . "\n";
+        echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        echo "\n</script>\n";
+    }
+});
